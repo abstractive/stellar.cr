@@ -1,4 +1,4 @@
-# Interstellar (interface)
+# Stellar (interface)
 
 Artillery+Quasar
 

@@ -1,3 +1,5 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
@@ -55,6 +57,7 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
+      distDir: "../public/",
       scopeHoisting: true,
       // vueRouterMode: 'history',
       // showProgress: false,
@@ -62,6 +65,7 @@ module.exports = function (ctx) {
       // analyze: true,
       // preloadChunks: false,
       // extractCSS: false,
+      gzip: true,
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack (cfg) {
@@ -74,6 +78,16 @@ module.exports = function (ctx) {
             formatter: require('eslint').CLIEngine.getFormatter('stylish')
           }
         })
+      },
+      chainWebpack(chain) {
+          chain.plugin('copy-root-over-public')
+          .use(CopyWebpackPlugin, [
+              [{
+                  from: appPaths.resolve.src('../../build/'),
+                  to: './',
+                  ignore: ['.*']
+              }]
+          ])
       }
     },
 
@@ -81,7 +95,7 @@ module.exports = function (ctx) {
     devServer: {
       // https: true,
       // port: 8080,
-      open: true // opens browser window automatically
+      open: false // opens browser window automatically
     },
 
     // animations: 'all', // --- includes all animations
@@ -98,9 +112,9 @@ module.exports = function (ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {}, // only for NON InjectManifest
       manifest: {
-        // name: 'Interstellar',
-        // short_name: 'Interstellar',
-        // description: 'Artillery+Quasar',
+        name: 'Stellar',
+        short_name: 'stellar',
+        description: 'Artillery+Quasar',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -137,7 +151,7 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/developing-cordova-apps/configuring-cordova
     cordova: {
-      // id: 'org.delimiter.abstractive.interstellar',
+      id: 'org.delimiter.abstractive.stellar',
       // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
     },
 
