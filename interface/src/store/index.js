@@ -1,16 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-// import example from './module-example'
-
 Vue.use(Vuex)
 
 /*
- * If not building with SSR mode, you can
- * directly export the Store instantiation
- */
-
-export default function (/* { ssrContext } */) {
+export default function () {
   const Store = new Vuex.Store({
     modules: {
       // example
@@ -22,4 +16,44 @@ export default function (/* { ssrContext } */) {
   })
 
   return Store
+}
+*/
+
+export default function () {
+  const store = new Vuex.Store({
+    state: {
+      showDrawer: true,
+      showSignIn: false
+    },
+    mutations: {
+      toggleDrawer (state) {
+        state.showDrawer = !state.showDrawer
+      },
+      hideDrawer (state) {
+        state.showDrawer = false
+      },
+      showSignIn (state) {
+        state.showSignIn = true
+      },
+      hideSignIn (state) {
+        state.showSignIn = false
+      }
+    },
+    actions: {
+      toggleDrawer (context) {
+        context.commit('toggleDrawer')
+      },
+      hideDrawer (context) {
+        context.commit('hideDrawer')
+      },
+      showSignIn (context) {
+        context.commit('showSignIn')
+      },
+      hideSignIn (context) {
+        context.commit('hideSignIn')
+      }
+    }
+  })
+
+  return store
 }

@@ -1,0 +1,11 @@
+port:
+  http: 1370
+  zeromq: 13700
+environments:
+  development:
+    launchers: 3
+  production:
+    launchers: 3
+    domains:
+      - stellar.artillery.cloud
+public: build/

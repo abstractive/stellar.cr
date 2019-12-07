@@ -1,6 +1,15 @@
 <template>
   <div id="q-app">
-    <router-view />
+    <transition
+      name = "fade"
+      appear
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut"
+      mode="out-in"
+      :duration="150"
+    >
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -9,3 +18,6 @@ export default {
   name: 'App'
 }
 </script>
+
+<style>
+</style>

@@ -1,0 +1,16 @@
+name: stellar
+version: 0.0.0.1
+crystal: 0.31.1
+
+github: abstractive/stellar.cr
+
+description: Stellar RAVE presences.
+
+authors:
+  - digitalextremist <code@extremist.digital>
+
+license: MIT
+
+dependencies:
+  artillery:
+    github: abstractive/artillery.cr
