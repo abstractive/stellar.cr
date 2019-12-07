@@ -5,8 +5,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = function (ctx) {
   return {
-    // app boot file (/src/boot)
-    // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/cli-documentation/boot-files
     boot: [
       'i18n',
@@ -24,7 +22,6 @@ module.exports = function (ctx) {
     extras: [
       // 'ionicons-v4',
       // 'mdi-v4',
-      // 'fontawesome-v5',
       // 'eva-icons',
       // 'themify',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
@@ -37,8 +34,6 @@ module.exports = function (ctx) {
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
       iconSet: 'fontawesome-v5',
-      // iconSet: 'ionicons-v4', // Quasar icon set
-      // lang: 'de', // Quasar language pack
 
       // Possible values for "all":
       // * 'auto' - Auto-import needed Quasar components & directives
@@ -50,7 +45,10 @@ module.exports = function (ctx) {
       all: 'auto',
 
       components: [],
-      directives: [],
+      directives: [
+        'Ripple',
+        'ClosePopup'
+      ],
 
       // Quasar plugins
       plugins: [
@@ -107,7 +105,10 @@ module.exports = function (ctx) {
 
     // animations: 'all', // --- includes all animations
     // https://quasar.dev/options/animations
-    animations: [],
+    animations: [
+      'fadeIn',
+      'fadeOut'
+    ],
 
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr
     ssr: {
@@ -125,30 +126,10 @@ module.exports = function (ctx) {
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
-        theme_color: '#027be3',
+        theme_color: '#CC342D',
         icons: [
           {
-            'src': 'statics/icons/icon-128x128.png',
-            'sizes': '128x128',
-            'type': 'image/png'
-          },
-          {
-            'src': 'statics/icons/icon-192x192.png',
-            'sizes': '192x192',
-            'type': 'image/png'
-          },
-          {
-            'src': 'statics/icons/icon-256x256.png',
-            'sizes': '256x256',
-            'type': 'image/png'
-          },
-          {
-            'src': 'statics/icons/icon-384x384.png',
-            'sizes': '384x384',
-            'type': 'image/png'
-          },
-          {
-            'src': 'statics/icons/icon-512x512.png',
+            'src': 'statics/insignia.png',
             'sizes': '512x512',
             'type': 'image/png'
           }
@@ -159,9 +140,7 @@ module.exports = function (ctx) {
     // https://quasar.dev/quasar-cli/developing-cordova-apps/configuring-cordova
     cordova: {
       id: 'org.delimiter.abstractive.stellar',
-      // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
     },
-
 
     // https://quasar.dev/quasar-cli/developing-capacitor-apps/configuring-capacitor
     capacitor: {
