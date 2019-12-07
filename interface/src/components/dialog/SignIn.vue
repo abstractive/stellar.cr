@@ -56,7 +56,7 @@
           <q-btn
             @click='onSubmit'
             icon-right="fas fa-sign-in-alt"
-            label="SignIn"
+            label="Sign In"
             type="submit"
             color="primary"
             size='lg'
@@ -112,7 +112,7 @@ export default {
           this.$q.notify({
             color: 'negative',
             position: 'top',
-            message: 'SignIn Error',
+            message: 'Sign In Error',
             icon: 'fas fa-exclamation-triangle'
           })
         })

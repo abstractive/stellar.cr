@@ -12,21 +12,20 @@
         link
       >
 
-        <!--
-        <q-item clickable class='q-mb-sm' to="/">
+        <q-item clickable class='q-mb-sm' to="/contribute">
           <q-item-section side avatar>
             <q-icon name="fas fa-fist-raised" />
           </q-item-section>
-          <q-item-section>Sign Up</q-item-section>
+          <q-item-section>Contribute</q-item-section>
         </q-item>
-        -->
-
-        <q-item clickable class='q-mb-sm' @click.native="revealSignIn">
+        <q-item clickable class='q-my-sm' @click.native="revealSignIn">
           <q-item-section side avatar>
             <q-icon name="fas fa-sign-in-alt" />
           </q-item-section>
           <q-item-section>Sign In</q-item-section>
         </q-item>
+
+        <stellar-drawer-information />
 
       </q-list>
     </q-drawer>

@@ -1,28 +1,27 @@
 const routes = [{
   path: '/',
   component: () => import('layouts/Landing.vue'),
-  children: [{
-    path: '',
-    component: () => import('pages/landing/Index.vue')
-  },
-  {
-    path: '/about',
-    component: () => import('pages/landing/About.vue')
-  }
-  /*
-  {
-    path: '/signup',
-    component: () => import('pages/landing/Signup.vue')
-  },
-  {
-    path: '/handbook',
-    component: () => import('pages/landing/Handbook.vue')
-  },
-  {
-    path: '/contact',
-    component: () => import('pages/landing/Contact.vue')
-  }
-  */
+  children: [
+    {
+      path: '',
+      component: () => import('pages/landing/Index.vue')
+    },
+    {
+      path: '/about',
+      component: () => import('pages/landing/About.vue')
+    },
+    {
+      path: '/support',
+      component: () => import('pages/landing/Support.vue')
+    },
+    {
+      path: '/contribute',
+      component: () => import('pages/landing/Contribute.vue')
+    },
+    {
+      path: '/handbook',
+      component: () => import('pages/landing/Handbook.vue')
+    }
   ]
 },
 /*
