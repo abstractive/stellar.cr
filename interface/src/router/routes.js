@@ -4,6 +4,10 @@ const routes = [{
   children: [{
     path: '',
     component: () => import('pages/landing/Index.vue')
+  },
+  {
+    path: '/about',
+    component: () => import('pages/landing/About.vue')
   }
   /*
   {
