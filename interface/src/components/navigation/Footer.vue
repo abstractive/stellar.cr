@@ -2,7 +2,7 @@
   <q-footer>
     <q-toolbar color="secondary">
       <q-toolbar-title class='text-right'>
-        <a class='cursor-pointer' to="/about">abstractive labs</a> &copy;
+        <a class='cursor-pointer' @click="$router.push('/about')">abstractive labs</a> &copy;
       </q-toolbar-title>
     </q-toolbar>
   </q-footer>
