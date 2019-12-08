@@ -99,7 +99,7 @@ export default {
       }
       this.$axios.post('/participant/authenticate', payload)
         .then((response) => {
-          console.log(response.data)
+          //de console.log(response.data)
           //de this.data = response.data
           this.$q.notify({
             color: 'positive',
