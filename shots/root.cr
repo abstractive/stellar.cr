@@ -1,5 +1,5 @@
 module Stellar
-  class Root < Artillery::Shot
+  class Root < Star
 
     vector "/"
 

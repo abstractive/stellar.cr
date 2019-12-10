@@ -4,7 +4,7 @@ crystal: 0.31.1
 
 github: abstractive/stellar.cr
 
-description: Stellar RAVE presences.
+description: Microservice-based application ecosystem framework
 
 authors:
   - digitalextremist <code@extremist.digital>

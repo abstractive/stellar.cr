@@ -1,5 +1,5 @@
 module Stellar
-  class Test < Artillery::Shot
+  class Test < Star
 
     vector :get, "/test"
 

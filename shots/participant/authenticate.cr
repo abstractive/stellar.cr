@@ -1,6 +1,6 @@
 module Stellar
   module Participant
-    class Authenticate < Artillery::Shot
+    class Authenticate < Star
 
       vector :post, "/participant/authenticate"
 
