@@ -1,3 +1,6 @@
+# 0.0.0.5 201912101847V1Gg7
+* Try to avoid recursive dependencies.
+
 # 0.0.0.4 201912101843V1Gg7
 * Actually push to GitHub this time, and fix logs.
 
