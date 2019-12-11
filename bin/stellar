@@ -16,4 +16,4 @@ if [[ -d "$(pwd)/src" ]]; then
     export ARTILLERY_BASE="\"./src/stellar.cr\""
 fi
 
-bin/bazooka
+bin/artillery --bazooka $*
