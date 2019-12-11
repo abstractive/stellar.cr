@@ -9,8 +9,7 @@ module.exports = function (ctx) {
     boot: [
       'i18n',
       'axios',
-      'insignia',
-      'drawer',
+      'stellar-base',
       'stellar-cta'
     ],
 
