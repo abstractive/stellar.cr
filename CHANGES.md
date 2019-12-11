@@ -1,3 +1,6 @@
+# v201912102320-1Gg7 0.0.0.8
+* Fix dependencies
+
 # v201912102005-1Gg7 0.0.0.7
 * Pass arguments into bin/artillery and don't hardcode bin/bazooka vs. use bin/artillery --bazooka
 * Package the bin/stellar executable into the shard
