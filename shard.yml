@@ -1,10 +1,13 @@
 name: stellar
-version: 0.0.0.6
+version: 0.0.0.7
 crystal: 0.31.1
 
 github: abstractive/stellar.cr
 
 description: Microservice-based application ecosystem framework
+
+executables:
+  - stellar
 
 authors:
   - digitalextremist <code@extremist.digital>

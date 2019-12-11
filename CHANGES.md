@@ -1,3 +1,8 @@
+# v201912102005-1Gg7 0.0.0.7
+* Pass arguments into bin/artillery and don't hardcode bin/bazooka vs. use bin/artillery --bazooka
+* Package the bin/stellar executable into the shard
+* Prepare empty /relay endpoint
+
 # v201912101927-1Gg7 0.0.0.6
 * Fix method of stars/ path injection on Artillery side.
 * Still needs to handle recursive dependencies issue possibly, right now uses local path.
