@@ -1,13 +1,10 @@
 <template>
   <stellar-form-card
-  class='q-mb-lg'
-  :title="title"
-  :actions="actions"
-  :options="options">
+    class='q-mb-lg'
+    v-bind="{title, actions, options}">
     Test
   </stellar-form-card>
 </template>
-
 <script>
 export default {
   data () {
@@ -17,19 +14,15 @@ export default {
         {
           label: 'Reset',
           icon: 'fas fa-recycle text-grey-7',
-          action: ''
-        },
-        {
-          label: 'Cancel',
-          icon: 'far fa-times-circle text-grey-7',
-          action: ''
+          click: this.onReset,
+          type: 'reset'
         }
       ],
       actions: [
         {
           label: 'Send',
           icon: 'fas fa-paper-plane text-grey-7',
-          action: ''
+          type: 'submit'
         }
       ]
     }
@@ -38,7 +31,12 @@ export default {
 
   },
   methods: {
-
+    onSubmit () {
+      console.log('Submit')
+    },
+    onReset () {
+      console.log('Reset')
+    }
   }
 }
 </script>

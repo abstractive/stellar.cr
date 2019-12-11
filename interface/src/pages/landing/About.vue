@@ -13,7 +13,6 @@
       </q-card-section>
     </q-card>
       <div class="q-py-sm row items-start q-gutter-md">
-      <stellar-cta-send-message />
       <stellar-cta-give-testimonial />
       <stellar-cta-share-suggestion />
       <stellar-cta-join-announcement-list />
