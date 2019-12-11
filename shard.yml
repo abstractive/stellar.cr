@@ -14,3 +14,5 @@ license: MIT
 dependencies:
   artillery:
     github: abstractive/artillery.cr
+  stellar:
+    github: abstractive/stellar.cr

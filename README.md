@@ -16,7 +16,7 @@ To prepare for development, on `Ubuntu` hosts, you need these packages:
 Then with those installed, you need the `quasar` CLI:
 
 ```
-apt install crystal npm libzmq3-dev libssl-dev libyaml-dev
+sudo apt install crystal npm libzmq3-dev libssl-dev libyaml-dev
 sudo npm install -g @quasar/cli
 ```
 
