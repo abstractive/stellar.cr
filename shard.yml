@@ -17,4 +17,3 @@ license: MIT
 dependencies:
   artillery:
     github: abstractive/artillery.cr
-    version: >=0.0.1.19
