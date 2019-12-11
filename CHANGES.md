@@ -1,3 +1,6 @@
+# v201912110024-1Gg7 0.0.0.10
+* bin/generate-ssl.sh drops into config/development/ssl/
+
 # v201912110002-1Gg7 0.0.0.9
 * Initial bin/stellar init
 
