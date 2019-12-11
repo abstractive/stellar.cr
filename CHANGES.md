@@ -1,3 +1,6 @@
+# 0.0.0.4 201912101843V1Gg7
+* Actually push to GitHub this time, and fix logs.
+
 # 0.0.0.3 201912101837V1Gg7
 * Fix errors in released Shard
 
