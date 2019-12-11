@@ -1,17 +1,19 @@
 #!/bin/bash
 
+function timestamp { echo `date '+%Y-%m-%d %H:%M:%S.%3N'`; }
 function log { echo "$(timestamp) > $1"; }
 
 #de Visit: Realtime development environment; the constellation is locally live.
-
 #de Build: Quasar and Artillery builds together, rendered as build/ and executable.
-
 #de Deploy: Package executable and interface application build into container and push.
-
 #de Monitor: Console tap for Artillery microservices and access to visualize mesh activity.
 
 log "Starting Stellar"
-export ARTILLERY_SHOTS=`pwd`/stars
+export ARTILLERY_SHOTS_DIRECTORY="stars"
+
 export ARTILLERY_BASE="\"stellar\""
+if [[ -d "$(pwd)/src" ]]; then
+    export ARTILLERY_BASE="\"./src/stellar.cr\""
+fi
 
 bin/bazooka
