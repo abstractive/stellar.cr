@@ -12,9 +12,8 @@
         tempor incididunt ut labore et dolore magna aliqua.
       </q-card-section>
     </q-card>
-      <div class="q-py-md row items-start q-gutter-md">
+      <div class="q-py-sm row items-start q-gutter-md">
       <stellar-cta-send-message />
-
       <stellar-cta-give-testimonial />
       <stellar-cta-share-suggestion />
       <stellar-cta-join-announcement-list />
@@ -27,7 +26,7 @@
 export default {
   data () {
     return {
-      title: 'About Stellar'
+      title: 'What is Stellar?'
     }
   },
   methods: {

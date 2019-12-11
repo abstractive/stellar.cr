@@ -13,13 +13,11 @@
       </q-card-section>
     </q-card>
 
-    <div class="q-py-md row items-start q-gutter-md">
+    <div class="q-py-sm row items-start q-gutter-md">
       <stellar-cta-send-message />
-
       <stellar-cta-request-bid />
       <stellar-cta-request-appointment />
       <stellar-cta-request-consultation />
-
       <stellar-cta-request-contact />
     </div>
 

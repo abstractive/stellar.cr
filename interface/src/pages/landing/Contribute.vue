@@ -12,8 +12,7 @@
         tempor incididunt ut labore et dolore magna aliqua.
       </q-card-section>
     </q-card>
-
-    <div class="q-py-md row items-start q-gutter-md">
+    <div class="q-py-sm row items-start q-gutter-md">
       <stellar-cta-request-access />
       <stellar-cta-join-slack />
       <stellar-cta-join-mattermost />
