@@ -10,7 +10,7 @@
           <div v-if="options" class="col-auto">
             <q-btn color="grey-7" round flat icon="more_vert">
               <q-menu fit anchor="bottom left" self="top left" auto-close>
-                <div class="row q-pa-xs text-right" v-for="button in options"
+                <div class="row no-wrap" v-for="button in options"
                   v-bind:key="button.label">
                   <q-btn flat
                     align="right" class='full-width'

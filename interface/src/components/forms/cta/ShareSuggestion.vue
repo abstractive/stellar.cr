@@ -35,7 +35,14 @@ export default {
       console.log('Submit')
     },
     onReset () {
-      console.log('Reset')
+      this.$q.dialog({
+        title: this.$t('reset.title'),
+        message: this.$t('reset.message'),
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        this.clearFields()
+      })
     }
   }
 }
