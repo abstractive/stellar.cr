@@ -12,6 +12,22 @@
         tempor incididunt ut labore et dolore magna aliqua.
       </q-card-section>
     </q-card>
+
+    <stellar-cta-send-message />
+    <stellar-cta-give-testimonial />
+    <stellar-cta-share-suggestion />
+
+    <stellar-cta-request-bid />
+    <stellar-cta-request-access />
+    <stellar-cta-request-contact />
+    <stellar-cta-request-appointment />
+
+    <stellar-cta-join-slack />
+    <stellar-cta-join-mattermost />
+
+    <stellar-cta-join-announcement-list />
+    <stellar-cta-newsletter-subscription />
+
   </q-page>
 </template>
 

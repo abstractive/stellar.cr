@@ -1,20 +1,21 @@
 <template>
-    
-
+  <div class="q-pa-md">
+    <h4>{{title}}</h4>
+  </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-          
-      }
-    },
-    computed: {
-
-    },
-    methods: {
-
+export default {
+  data () {
+    return {
+      title: 'Join the Announcement List'
     }
+  },
+  computed: {
+
+  },
+  methods: {
+
   }
+}
 </script>
