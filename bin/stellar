@@ -3,17 +3,40 @@
 function timestamp { echo `date '+%Y-%m-%d %H:%M:%S.%3N'`; }
 function log { echo "$(timestamp) > $1"; }
 
+
 #de Visit: Realtime development environment; the constellation is locally live.
 #de Build: Quasar and Artillery builds together, rendered as build/ and executable.
 #de Deploy: Package executable and interface application build into container and push.
 #de Monitor: Console tap for Artillery microservices and access to visualize mesh activity.
 
-log "Starting Stellar"
-export ARTILLERY_SHOTS_DIRECTORY="stars"
+case "${@: -1}" in
+  init )
+    #de Clone interface/ into current presence and build initial interface.
+    if [[ ! -d interface ]]; then
+      cp -R lib/stellar/interface .
+      cd interface/
+      npm install
+    else
+      log "Interface already exists."
+    fi
+    if [[ ! -d stars ]]; then
+      cp -R lib/stellar/stars .
+      cd stars/
+    else
+      log "Stars already exist."
+    fi
+    ;;
 
-export ARTILLERY_BASE="\"stellar\""
-if [[ -d "$(pwd)/src" ]]; then
-    export ARTILLERY_BASE="\"./src/stellar.cr\""
-fi
+  start | * )
+    log "Instantiating Stellar presence/constellation."
+    export ARTILLERY_SHOTS_DIRECTORY="stars"
 
-bin/artillery --bazooka $*
+    export ARTILLERY_BASE="\"stellar\""
+    if [[ -d "$(pwd)/src" ]]; then
+        export ARTILLERY_BASE="\"./src/stellar.cr\""
+    fi
+
+    bin/artillery --bazooka $*
+    ;;
+
+esac

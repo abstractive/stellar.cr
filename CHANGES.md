@@ -1,3 +1,6 @@
+# v201912110002-1Gg7 0.0.0.9
+* Initial bin/stellar init
+
 # v201912102320-1Gg7 0.0.0.8
 * Fix dependencies
 
