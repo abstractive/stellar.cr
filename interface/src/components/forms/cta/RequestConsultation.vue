@@ -18,7 +18,7 @@
         <q-input filled v-model="fields.Organization" type="text" label="Organization" />
       </div>
     </div>
-    <div class='row q-pb-sm'>
+    <div class='row'>
       <div class='col'>
         <q-input filled v-model="fields.EmailAddress" type="email" label="Email Address" />
       </div>
@@ -26,6 +26,7 @@
         <q-input filled v-model="fields.PhoneNumber" type="tel" label="Phone Number" />
       </div>
     </div>
+    <q-separator class='q-my-md' />
     <div class='row q-pb-sm'>
       <div class='col'>
         <q-input filled v-model="fields.ProjectTitle" type="text" label="Project Title" />
@@ -41,21 +42,11 @@
 <script>
 export default {
   created () {
-    console.log('Created')
     this.clearFields()
   },
   data () {
     return {
-      fields: {
-        NameFirst: '',
-        NameMiddle: '',
-        NameLast: '',
-        Organization: '',
-        EmailAddress: '',
-        PhoneNumber: '',
-        ProjectTitle: '',
-        Comments: ''
-      },
+      fields: {},
       title: 'Request a Consultation',
       options: [
         {
