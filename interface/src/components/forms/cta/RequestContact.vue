@@ -21,7 +21,8 @@ export default {
       actions: [
         {
           label: 'Request',
-          icon: 'fas fa-phone text-grey-7'
+          icon: 'fas fa-phone text-grey-7',
+          type: 'submit'
         }
       ]
     }
