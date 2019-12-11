@@ -8,7 +8,7 @@
         <q-icon name="fas fa-bars" />
       </q-btn>
       <q-toolbar-title>
-        <a class='cursor-pointer' @click="$router.push('/')">
+        <a class='cursor-pointer' @click="$router.push('/about')">
           Stellar
         </a>
       </q-toolbar-title>
