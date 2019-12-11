@@ -6,8 +6,10 @@ import StellarCTARequestBid from 'components/forms/cta/RequestBid.vue'
 import StellarCTARequestAccess from 'components/forms/cta/RequestAccess.vue'
 import StellarCTARequestContact from 'components/forms/cta/RequestContact.vue'
 import StellarCTARequestAppointment from 'components/forms/cta/RequestAppointment.vue'
+import StellarCTARequestConsultation from 'components/forms/cta/RequestConsultation.vue'
 
 import StellarCTAJoinSlack from 'components/forms/cta/JoinSlack.vue'
+import StellarCTAJoinGitLab from 'components/forms/cta/JoinGitLab.vue'
 import StellarCTAJoinMattermost from 'components/forms/cta/JoinMattermost.vue'
 
 import StellarCTAJoinAnnouncementList from 'components/forms/cta/JoinAnnouncementList.vue'
@@ -22,8 +24,10 @@ export default async ({ Vue }) => {
   Vue.component('stellar-cta-request-access', StellarCTARequestAccess)
   Vue.component('stellar-cta-request-contact', StellarCTARequestContact)
   Vue.component('stellar-cta-request-appointment', StellarCTARequestAppointment)
+  Vue.component('stellar-cta-request-consultation', StellarCTARequestConsultation)
 
   Vue.component('stellar-cta-join-slack', StellarCTAJoinSlack)
+  Vue.component('stellar-cta-join-gitlab', StellarCTAJoinGitLab)
   Vue.component('stellar-cta-join-mattermost', StellarCTAJoinMattermost)
 
   Vue.component('stellar-cta-join-announcement-list', StellarCTAJoinAnnouncementList)

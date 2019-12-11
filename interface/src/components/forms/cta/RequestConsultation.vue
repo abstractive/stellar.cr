@@ -12,7 +12,7 @@
 export default {
   data () {
     return {
-      title: 'Join the Announcement List',
+      title: 'Request a Consultation',
       options: [
         {
           label: 'Reset',
@@ -27,8 +27,8 @@ export default {
       ],
       actions: [
         {
-          label: 'Join',
-          icon: 'fas fa-bullhorn text-grey-7',
+          label: 'Request',
+          icon: 'fas fa-diagnoses text-grey-7',
           action: ''
         }
       ]

@@ -2,17 +2,15 @@
   <q-header>
     <q-toolbar color="primary">
       <q-btn
-        flat
-        dense
-        round
+        flat dense round
         @click="toggleDrawer"
-        aria-label="Navigation"
-      >
-        <q-icon name="fas fa-angle-up" />
+        aria-label="Navigation">
+        <q-icon name="fas fa-bars" />
       </q-btn>
-
       <q-toolbar-title>
-        <a class='cursor-pointer' @click="$router.push('/')">Stellar</a>
+        <a class='cursor-pointer' @click="$router.push('/')">
+          Stellar
+        </a>
       </q-toolbar-title>
     </q-toolbar>
   </q-header>

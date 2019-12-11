@@ -1,24 +1,26 @@
 <template>
-  <q-card flat bordered class="my-card bg-grey-1">
+  <q-card flat bordered class="bg-grey-3">
       <q-card-section>
         <div class="row items-center no-wrap">
           <div class="col">
-            <div class="text-h6">Our Planet</div>
-            <div class="text-subtitle2">by John Doe</div>
+            <div class="text-h6 q-pb-none">{{title}}</div>
           </div>
-
-          <div class="col-auto">
+          <div v-if="options" class="col-auto">
             <q-btn color="grey-7" round flat icon="more_vert">
-              <q-menu cover auto-close>
+              <q-menu  fit anchor="bottom left" self="top left" auto-close>
                 <q-list>
-                  <q-item clickable>
-                    <q-item-section>Remove Card</q-item-section>
-                  </q-item>
-                  <q-item clickable>
-                    <q-item-section>Send Feedback</q-item-section>
-                  </q-item>
-                  <q-item clickable>
-                    <q-item-section>Share</q-item-section>
+                  <q-item clickable
+                    v-for="item in options"
+                    v-bind:class='item.class'
+                    v-bind:key="item.label"
+                    v-bind:icon="item.icon"
+                    v-bind:label="item.label">
+                    <q-item-section>
+                      {{item.label}}
+                    </q-item-section>
+                    <q-item-section avatar>
+                      <q-icon :name='item.icon' />
+                    </q-item-section>
                   </q-item>
                 </q-list>
               </q-menu>
@@ -26,29 +28,32 @@
           </div>
         </div>
       </q-card-section>
-
       <q-card-section>
-        {{ lorem }}
+        <slot></slot>
       </q-card-section>
-
       <q-separator />
-
       <q-card-actions>
-        <q-btn flat>Action 1</q-btn>
-        <q-btn flat>Action 2</q-btn>
+        <q-btn flat
+          v-for="button in actions"
+          v-bind:class='button.class'
+          v-bind:key="button.label"
+          v-bind:icon="button.icon"
+          v-bind:label="button.label">
+        </q-btn>
       </q-card-actions>
     </q-card>
 </template>
 
 <script>
 export default {
+  props: [
+    'title',
+    'actions',
+    'options'
+  ],
   data () {
     return {
-      title: 'Send a Message'
     }
-  },
-  computed: {
-
   },
   methods: {
 

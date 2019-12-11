@@ -1,10 +1,10 @@
 <template>
-  <q-page class=" q-pa-lg">
+  <q-page class="q-pa-lg">
     <h4 class='q-mt-none q-mb-lg'>
       <q-icon class='text-grey-7' name="fas fa-headset q-mr-sm" />
       {{ title }}
     </h4>
-    <q-card class="">
+    <q-card class="q-mb-lg">
       <q-card-section>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -13,20 +13,15 @@
       </q-card-section>
     </q-card>
 
-    <stellar-cta-send-message />
-    <stellar-cta-give-testimonial />
-    <stellar-cta-share-suggestion />
+    <div class="q-py-md row items-start q-gutter-md">
+      <stellar-cta-send-message />
 
-    <stellar-cta-request-bid />
-    <stellar-cta-request-access />
-    <stellar-cta-request-contact />
-    <stellar-cta-request-appointment />
+      <stellar-cta-request-bid />
+      <stellar-cta-request-appointment />
+      <stellar-cta-request-consultation />
 
-    <stellar-cta-join-slack />
-    <stellar-cta-join-mattermost />
-
-    <stellar-cta-join-announcement-list />
-    <stellar-cta-newsletter-subscription />
+      <stellar-cta-request-contact />
+    </div>
 
   </q-page>
 </template>
