@@ -1,3 +1,3 @@
-require 'artillery'
+require "artillery"
 
 alias Star = Artillery::Shot

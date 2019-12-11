@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#de Visit: Realtime development environment; the constellation is locally live.
+
+#de Build: Quasar and Artillery builds together, rendered as build/ and executable.
+
+#de Deploy: Package executable and interface application build into container and push.
+
+#de Monitor: Console tap for Artillery microservices and access to visualize mesh activity.
+
+echo "> Stellar"
+export ARTILLERY_SHOTS=`pwd`/stars
+export ARTILLERY_BASE="\"stellar\""
+
+bin/bazooka
