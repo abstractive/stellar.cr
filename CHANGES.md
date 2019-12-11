@@ -1,20 +1,20 @@
-# 201912101927V1Gg7 0.0.0.6
+# v201912101927-1Gg7 0.0.0.6
 * Fix method of stars/ path injection on Artillery side.
 * Still needs to handle recursive dependencies issue possibly, right now uses local path.
 
-# 201912101847V1Gg7 0.0.0.5
+# v201912101847-1Gg7 0.0.0.5
 * Try to avoid recursive dependencies.
 
-# 201912101843V1Gg7 0.0.0.4
+# v201912101843-1Gg7 0.0.0.4
 * Actually push to GitHub this time, and fix logs.
 
-# 201912101837V1Gg7 0.0.0.3
+# v201912101837-1Gg7 0.0.0.3
 * Fix errors in released Shard
 
-# 201912101830V1Gg7 0.0.0.2
+# v201912101830-1Gg7 0.0.0.2
 * Prepare to release first Shard, overriding Artillery
 
-# 201912071310VECp4 0.0.0.1
+# v201912071310-ECp4 0.0.0.1
 * Add Quasar 1.5.5
 * Use Crystal 0.13.1
 * Use stellar.artillery.cloud for example.
