@@ -1,3 +1,10 @@
+# v201912120128-2Hg8 0.0.1.0
+* Added localization in the process of adding all the forms for CTAs
+* Reworked drawers, navigation, and added minified sidebar
+* Laid out all the CTA forms, with seamless and DRY validation
+* Added in Vuelidate, lodash, then made slight Vue.prototype augmentations
+* Created reusable set of CTAs to be used anywhere, once data processing is added next
+
 # v201912110024-1Gg7 0.0.0.10
 * bin/generate-ssl.sh drops into config/development/ssl/
 
