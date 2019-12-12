@@ -21,7 +21,7 @@
     </div>
     <div class='row q-pb-sm'>
       <div class='col'>
-        <q-input filled v-model="fields.Organization" type="text" :label="$t('Organization')" />
+        <q-input filled v-model="fields.Organization" type="text" :label="$t('fields.Organization')" />
       </div>
     </div>
     <div class='row'>
@@ -32,7 +32,7 @@
           :label="$t('fields.EmailAddress')" />
       </div>
       <div class='col q-pl-sm'>
-        <q-input filled v-model="fields.PhoneNumber" type="tel" :label="$t('PhoneNumber')" />
+        <q-input filled v-model="fields.PhoneNumber" type="tel" :label="$t('fields.PhoneNumber')" />
       </div>
     </div>
     <q-separator class='q-my-md' />
@@ -44,7 +44,7 @@
     <q-separator class='q-my-md' />
     <div class='row q-pb-sm'>
       <div class='col'>
-        <q-input filled rows="3" v-model="fields.Comments" type="textarea" :label="$t('Comments')" />
+        <q-input filled rows="3" v-model="fields.Comments" type="textarea" :label="$t('fields.Comments')" />
       </div>
     </div>
   </stellar-form-card>
