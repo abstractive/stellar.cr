@@ -7,14 +7,28 @@ export default {
   error: {
     form_invalid: 'Please correct the errors in your form.'
   },
-  types: {
-    EmailAddress: {
-      label: 'Email Address',
-      error: 'Must be valid email address.'
-    },
-    Required: {
-      error: 'Required.'
-    }
+  rules: {
+    email: 'Must be valid email address.',
+    required: 'Required.'
+  },
+  fields: {
+    OK: 'OK',
+    Cancel: 'Cancel',
+    EmailAddress: 'Email Address',
+    PhoneNumber: 'Phone Number',
+    NameLast: 'Last Name',
+    NameMiddle: 'Middle Name',
+    NameFirst: 'First Name',
+    Organization: 'Organization',
+    ProjectTitle: 'ProjectTitle',
+    Subject: 'Subject',
+    Message: 'Message',
+    Comments: 'Comments',
+    Testimonial: 'Testimonial',
+    Suggestion: 'Suggestion',
+    IdealTime: 'Ideal Time',
+    IdealDate: 'Ideal Date',
+    LocationAddress: 'Location Address'
   },
   forms: {
     SendMessage: {

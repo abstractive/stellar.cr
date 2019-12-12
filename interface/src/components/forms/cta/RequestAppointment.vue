@@ -4,26 +4,35 @@
     v-bind="{title, actions}">
     <div class='row'>
       <div class='col q-pb-sm'>
-        <q-input filled v-model="fields.NameFirst" type="text" label="First Name" />
+        <q-input filled type="text"
+          v-bind="validateField($v.fields.NameFirst)"
+          v-model.trim="$v.fields.NameFirst.$model"
+          :label="$t('fields.NameFirst')" />
       </div>
       <div class='col q-px-sm'>
-        <q-input filled v-model="fields.NameMiddle" type="text" label="Middle Name" />
+        <q-input filled type="text" v-model="fields.NameMiddle" :label="$t('fields.NameMiddle')" />
       </div>
       <div class='col'>
-        <q-input filled v-model="fields.NameLast" type="text" label="Last Name" />
+        <q-input filled type="text"
+          v-bind="validateField($v.fields.NameLast)"
+          v-model.trim="$v.fields.NameLast.$model"
+          :label="$t('fields.NameLast')" />
       </div>
     </div>
     <div class='row q-pb-sm'>
       <div class='col'>
-        <q-input filled v-model="fields.Organization" type="text" label="Organization" />
+        <q-input filled v-model="fields.Organization" type="text" :label="$t('fields.Organization')" />
       </div>
     </div>
     <div class='row'>
       <div class='col'>
-        <q-input filled v-model="fields.EmailAddress" type="email" label="Email Address" />
+        <q-input filled type="email"
+          v-bind="validateField($v.fields.EmailAddress)"
+          v-model.trim="$v.fields.EmailAddress.$model"
+          :label="$t('fields.EmailAddress')" />
       </div>
       <div class='col q-pl-sm'>
-        <q-input filled v-model="fields.PhoneNumber" type="tel" label="Phone Number" />
+        <q-input filled v-model="fields.PhoneNumber" type="tel" :label="$t('fields.PhoneNumber')" />
       </div>
     </div>
     <q-separator class='q-my-md' />
@@ -31,18 +40,19 @@
       <div class='col'>
         <q-input
           filled
-          v-model="fields.Time"
+          :label="$t('fields.IdealTime')"
+          v-model="fields.IdealTime"
           mask="time">
           <template v-slot:append>
             <q-icon name="access_time" class="cursor-pointer">
               <q-popup-proxy
-                @before-show="updateTimeProxy"
+                @before-show="updateIdealTimeProxy"
                 transition-show="scale"
                 transition-hide="scale">
-                <q-time landscape v-model="proxyTime">
+                <q-time landscape v-model="proxyIdealTime">
                   <div class="row items-center justify-end">
-                    <q-btn label="Cancel" color="primary" flat v-close-popup />
-                    <q-btn label="OK" color="primary" flat @click="saveTime" v-close-popup />
+                    <q-btn :label="$t('fields.Cancel')" color="primary" flat v-close-popup />
+                    <q-btn :label="$t('fields.OK')" color="primary" flat @click="saveIdealTime" v-close-popup />
                   </div>
                 </q-time>
               </q-popup-proxy>
@@ -53,18 +63,19 @@
       <div class='col q-pl-sm'>
         <q-input
           filled
-          v-model="fields.Date"
+          :label="$t('fields.IdealDate')"
+          v-model="fields.IdealDate"
           mask="date">
           <template v-slot:append>
             <q-icon name="event" class="cursor-pointer">
               <q-popup-proxy
-                @before-show="updateDateProxy"
+                @before-show="updateIdealDateProxy"
                 transition-show="scale"
                 transition-hide="scale">
-                <q-date landscape v-model="proxyDate">
+                <q-date landscape v-model="proxyIdealDate">
                   <div class="row items-center justify-end">
-                    <q-btn label="Cancel" color="primary" flat v-close-popup />
-                    <q-btn label="OK" color="primary" flat @click="saveDate" v-close-popup />
+                    <q-btn :label="$t('fields.Cancel')" color="primary" flat v-close-popup />
+                    <q-btn :label="$t('fields.OK')" color="primary" flat @click="saveIdealDate" v-close-popup />
                   </div>
                 </q-date>
               </q-popup-proxy>
@@ -76,18 +87,25 @@
     <q-separator class='q-my-md' />
     <div class='row q-pb-sm'>
       <div class='col'>
-        <q-input filled v-model="fields.Comments" type="textarea" label="Comments" />
+        <q-input filled rows='4' v-model="fields.LocationAddress" type="textarea" :label="$t('fields.LocationAddress')" />
+      </div>
+    </div>
+    <q-separator class='q-my-md' />
+    <div class='row q-pb-sm'>
+      <div class='col'>
+        <q-input filled rows="3" v-model="fields.Comments" type="textarea" :label="$t('fields.Comments')" />
       </div>
     </div>
   </stellar-form-card>
 </template>
 <script>
+import { required, email } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
       fields: {},
-      proxyTime: '',
-      proxyDate: '',
+      proxyIdealTime: '',
+      proxyIdealDate: '',
       title: this.$t('forms.RequestAppointment.title'),
       actions: [
         {
@@ -98,23 +116,40 @@ export default {
       ]
     }
   },
+  validations: {
+    fields: {
+      EmailAddress: {
+        required,
+        email
+      },
+      NameFirst: {
+        required
+      },
+      NameLast: {
+        required
+      }
+    }
+  },
   methods: {
     onSubmit () {
-      console.log(this.fields)
+      if (this.testSubmit(this)) {
+        console.log(this.fields)
+      }
     },
-    saveTime () {
-      this.fields.Time = this.proxyTime
+    saveIdealTime () {
+      this.fields.IdealTime = this.proxyIdealTime
     },
-    updateTimeProxy () {
-      this.proxyTime = this.fields.Time
+    updateIdealTimeProxy () {
+      this.proxyIdealTime = this.fields.IdealTime
     },
-    saveDate () {
-      this.fields.Date = this.proxyDate
+    saveIdealDate () {
+      this.fields.IdealDate = this.proxyIdealDate
     },
-    updateDateProxy () {
-      this.proxyDate = this.fields.Date
+    updateIdealDateProxy () {
+      this.proxyIdealDate = this.fields.IdealDate
     },
     clearFields () {
+      this.$v.fields.$reset()
       this.fields = {
         NameFirst: '',
         NameMiddle: '',
@@ -123,8 +158,8 @@ export default {
         EmailAddress: '',
         PhoneNumber: '',
         Type: '',
-        Time: '',
-        Date: '',
+        IdealTime: '',
+        IdealDate: '',
         LocationAddress: '',
         Comments: ''
       }
