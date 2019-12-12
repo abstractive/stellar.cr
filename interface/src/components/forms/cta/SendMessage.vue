@@ -1,7 +1,7 @@
 <template>
   <stellar-form-card
     class='q-mb-lg'
-    v-bind="{title, actions, options}">
+    v-bind="{title, actions}">
     <div class='row'>
       <div class='col q-pb-sm'>
         <q-input filled v-model="fields.NameFirst" type="text" label="First Name" />
@@ -41,21 +41,10 @@
 </template>
 <script>
 export default {
-  created () {
-    this.clearFields()
-  },
   data () {
     return {
       fields: {},
       title: 'Send a Message',
-      options: [
-        {
-          label: 'Reset',
-          icon: 'fas fa-recycle text-grey-7',
-          click: this.onReset,
-          type: 'reset'
-        }
-      ],
       actions: [
         {
           label: 'Send',
@@ -68,16 +57,6 @@ export default {
   methods: {
     onSubmit () {
       console.log(this.fields)
-    },
-    onReset () {
-      this.$q.dialog({
-        title: this.$t('reset.title'),
-        message: this.$t('reset.message'),
-        cancel: true,
-        persistent: true
-      }).onOk(() => {
-        this.clearFields()
-      })
     },
     clearFields () {
       this.fields = {

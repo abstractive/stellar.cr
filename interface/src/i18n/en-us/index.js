@@ -5,6 +5,7 @@ export default {
   failed: 'Action failed',
   success: 'Action was successful',
   reset: {
+    option: 'Reset',
     title: 'Confirm Reset',
     message: 'Are you sure you want to erase the contents of this form?'
   }

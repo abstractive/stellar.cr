@@ -1,15 +1,23 @@
 <template>
   <q-card flat bordered class="bg-grey-3">
     <q-form @submit="$parent.onSubmit()"
-            @reset="$parent.onReset()">
+            @reset="onReset">
       <q-card-section>
         <div class="row items-center no-wrap">
           <div class="col">
             <div class="text-h6 q-pb-none">{{title}}</div>
           </div>
-          <div v-if="options" class="col-auto">
-            <q-btn color="grey-7" round flat icon="more_vert">
-              <q-menu fit anchor="bottom left" self="top left" auto-close>
+          <q-btn color="grey-7" round flat icon="more_vert">
+            <q-menu fit anchor="bottom left" self="top left" auto-close>
+              <div class="row no-wrap">
+                <q-btn flat align="right" class='full-width'
+                  @click="onReset"
+                  icon-right="fas fa-recycle text-grey-7"
+                  :label="$t('reset.option')"
+                  type='reset'>
+                </q-btn>
+              </div>
+              <div v-if="options">
                 <div class="row no-wrap" v-for="button in options"
                   v-bind:key="button.label">
                   <q-btn flat
@@ -22,9 +30,9 @@
                     v-bind:type="button.type">
                   </q-btn>
                 </div>
-              </q-menu>
-            </q-btn>
-          </div>
+              </div>
+            </q-menu>
+          </q-btn>
         </div>
       </q-card-section>
       <q-card-section>
@@ -47,19 +55,32 @@
 
 <script>
 export default {
-  props: [
-    'title',
-    'actions',
-    'options',
-    'onSubmit',
-    'onReset'
-  ],
+  created () {
+    this.$parent.clearFields()
+  },
+  props: {
+    title: String,
+    actions: Array,
+    options: {
+      type: Array,
+      default: Array.new
+    }
+  },
   data () {
     return {
     }
   },
   methods: {
-
+    onReset () {
+      this.$q.dialog({
+        title: this.$t('reset.title'),
+        message: this.$t('reset.message'),
+        cancel: true,
+        persistent: true
+      }).onOk(() => {
+        this.$parent.clearFields()
+      })
+    }
   }
 }
 </script>

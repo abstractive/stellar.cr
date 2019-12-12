@@ -1,7 +1,7 @@
 <template>
   <stellar-form-card
     class='q-mb-lg'
-    v-bind="{title, actions, options}">
+    v-bind="{title, actions}">
     Test
   </stellar-form-card>
 </template>
@@ -10,15 +10,8 @@
 export default {
   data () {
     return {
+      fields: {},
       title: 'Join GitLab',
-      options: [
-        {
-          label: 'Reset',
-          icon: 'fas fa-recycle text-grey-7',
-          click: this.onReset,
-          type: 'reset'
-        }
-      ],
       actions: [
         {
           label: 'Request',
@@ -30,17 +23,17 @@ export default {
   },
   methods: {
     onSubmit () {
-      console.log('Submit')
+      console.log(this.fields)
     },
-    onReset () {
-      this.$q.dialog({
-        title: this.$t('reset.title'),
-        message: this.$t('reset.message'),
-        cancel: true,
-        persistent: true
-      }).onOk(() => {
-        this.clearFields()
-      })
+    clearFields () {
+      this.fields = {
+        NameFirst: '',
+        NameMiddle: '',
+        NameLast: '',
+        Organization: '',
+        EmailAddress: '',
+        Comments: ''
+      }
     }
   }
 }
