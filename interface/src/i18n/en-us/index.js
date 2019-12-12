@@ -4,6 +4,18 @@
 export default {
   failed: 'Action failed',
   success: 'Action was successful',
+  error: {
+    form_invalid: 'Please correct the errors in your form.'
+  },
+  types: {
+    EmailAddress: {
+      label: 'Email Address',
+      error: 'Must be valid email address.'
+    },
+    Required: {
+      error: 'Required.'
+    }
+  },
   forms: {
     SendMessage: {
       title: 'Send a Message',

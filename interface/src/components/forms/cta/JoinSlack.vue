@@ -20,7 +20,12 @@
     </div>
     <div class='row'>
       <div class='col'>
-        <q-input filled v-model="fields.EmailAddress" type="email" label="Email Address" />
+        <q-input filled
+          :hide-bottom-space="!$v.fields.EmailAddress.$dirty"
+          v-model.trim="$v.fields.EmailAddress.$model"
+          :error-message="showError(['EmailAddress','Required'])"
+          :error="$v.fields.EmailAddress.$dirty"
+          type="email" :label="$t('types.EmailAddress.label')" />
       </div>
     </div>
     <q-separator class='q-my-md' />
@@ -32,6 +37,7 @@
   </stellar-form-card>
 </template>
 <script>
+import { required, email } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
@@ -46,11 +52,31 @@ export default {
       ]
     }
   },
+  validations: {
+    fields: {
+      EmailAddress: {
+        required,
+        email
+      }
+    }
+  },
   methods: {
     onSubmit () {
-      console.log(this.fields)
+      this.$v.$touch()
+      if (this.$v.$invalid) {
+        console.log('error')
+        this.$q.notify({
+          color: 'negative',
+          position: 'top',
+          message: this.$t('error.form_invalid'),
+          icon: 'fas fa-exclamation-triangle'
+        })
+      } else {
+        console.log(this.fields)
+      }
     },
     clearFields () {
+      this.$v.fields.$reset()
       this.fields = {
         NameFirst: '',
         NameMiddle: '',

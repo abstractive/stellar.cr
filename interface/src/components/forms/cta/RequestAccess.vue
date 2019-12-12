@@ -4,13 +4,13 @@
     v-bind="{title, actions}">
     <div class='row'>
       <div class='col q-pb-sm'>
-        <q-input filled v-model="fields.NameFirst" type="text" label="First Name" />
+        <q-input filled v-model="fields.NameFirst" type="text" label="First Name" :rules="[val => !!val || 'Field is required']" />
       </div>
       <div class='col q-px-sm'>
         <q-input filled v-model="fields.NameMiddle" type="text" label="Middle Name" />
       </div>
       <div class='col'>
-        <q-input filled v-model="fields.NameLast" type="text" label="Last Name" />
+        <q-input filled v-model="fields.NameLast" type="text" label="Last Name" :rules="[val => !!val || 'Field is required']" />
       </div>
     </div>
     <div class='row q-pb-sm'>

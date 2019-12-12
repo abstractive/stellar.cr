@@ -1,7 +1,8 @@
 <template>
   <q-card flat bordered class="bg-grey-3">
-    <q-form @submit="$parent.onSubmit()"
-            @reset="onReset">
+    <q-form @submit.prevent="$parent.onSubmit()"
+            @reset="onReset"
+            ref='form'>
       <q-card-section>
         <div class="row items-center no-wrap">
           <div class="col">
@@ -10,9 +11,9 @@
           <q-btn color="grey-7" round flat icon="more_vert">
             <q-menu fit anchor="bottom left" self="top left" auto-close>
               <div class="row no-wrap">
-                <q-btn size='md' dense flat align="right" class='full-width'
+                <q-btn size='md' dense flat align="right" class='q-pa-xs full-width'
                   @click="onReset"
-                  icon-right="fas fa-recycle text-grey-7"
+                  icon-right="fas fa-trash text-grey-7"
                   :label="$t('reset.option')"
                   type='reset'>
                 </q-btn>
