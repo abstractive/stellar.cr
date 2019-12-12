@@ -3,34 +3,31 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-/*
-export default function () {
-  const Store = new Vuex.Store({
-    modules: {
-      // example
-    },
-
-    // enable strict mode (adds overhead!)
-    // for dev mode only
-    strict: process.env.DEV
-  })
-
-  return Store
-}
-*/
-
 export default function () {
   const store = new Vuex.Store({
     state: {
       showDrawer: true,
-      showSignIn: false
+      showSignIn: false,
+      fullDrawer: false
     },
     mutations: {
       toggleDrawer (state) {
-        state.showDrawer = !state.showDrawer
+        if (!(state.showDrawer = !state.showDrawer)) {
+          console.log('toggle?')
+          state.fullDrawer = false
+        }
       },
       hideDrawer (state) {
         state.showDrawer = false
+      },
+      showDrawer (state) {
+        state.showDrawer = true
+      },
+      miniDrawer (state) {
+        state.fullDrawer = false
+      },
+      fullDrawer (state) {
+        state.fullDrawer = true
       },
       showSignIn (state) {
         state.showSignIn = true
@@ -45,6 +42,15 @@ export default function () {
       },
       hideDrawer (context) {
         context.commit('hideDrawer')
+      },
+      showDrawer (context) {
+        context.commit('showDrawer')
+      },
+      miniDrawer (context) {
+        context.commit('miniDrawer')
+      },
+      fullDrawer (context) {
+        context.commit('fullDrawer')
       },
       showSignIn (context) {
         context.commit('showSignIn')

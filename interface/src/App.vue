@@ -1,13 +1,11 @@
 <template>
   <div id="q-app">
     <transition
-      name = "fade"
+      name="fade"
       appear
       enter-active-class="animated fadeIn"
       leave-active-class="animated fadeOut"
-      mode="out-in"
-      :duration="150"
-    >
+      :duration="300">
       <router-view />
     </transition>
   </div>

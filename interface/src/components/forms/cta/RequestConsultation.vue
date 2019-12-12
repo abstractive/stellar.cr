@@ -44,10 +44,10 @@ export default {
   data () {
     return {
       fields: {},
-      title: 'Request a Consultation',
+      title: this.$t('forms.RequestConsultation.title'),
       actions: [
         {
-          label: 'Request',
+          label: this.$t('forms.RequestConsultation.option'),
           icon: 'fas fa-diagnoses text-grey-7',
           type: 'submit'
         }

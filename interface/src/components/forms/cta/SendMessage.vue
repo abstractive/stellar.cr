@@ -44,10 +44,10 @@ export default {
   data () {
     return {
       fields: {},
-      title: 'Send a Message',
+      title: this.$t('forms.SendMessage.title'),
       actions: [
         {
-          label: 'Send',
+          label: this.$t('forms.SendMessage.option'),
           icon: 'fas fa-paper-plane text-grey-7',
           type: 'submit'
         }

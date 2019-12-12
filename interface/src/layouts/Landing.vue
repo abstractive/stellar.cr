@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHr LpR lFr">
+  <q-layout view="hHh lpR fFf">
     <stellar-header />
     <stellar-drawer-landing />
     <stellar-footer />
@@ -9,14 +9,11 @@
     </q-page-container>
   </q-layout>
 </template>
-
 <script>
-
 import NavigationHeader from 'components/navigation/Header.vue'
 import DrawerLanding from 'components/drawers/Landing.vue'
 import NavigationFooter from 'components/navigation/Footer.vue'
 import DialogSignIn from 'components/dialogs/SignIn.vue'
-
 export default {
   name: 'Landing',
   components: {
@@ -26,8 +23,4 @@ export default {
     'stellar-signin': DialogSignIn
   }
 }
-
 </script>
-
-<style>
-</style>

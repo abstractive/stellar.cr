@@ -2,19 +2,44 @@
   <stellar-form-card
     class='q-mb-lg'
     v-bind="{title, actions}">
-    Test
+    <div class='row'>
+      <div class='col q-pb-sm'>
+        <q-input filled v-model="fields.NameFirst" type="text" label="First Name" />
+      </div>
+      <div class='col q-px-sm'>
+        <q-input filled v-model="fields.NameMiddle" type="text" label="Middle Name" />
+      </div>
+      <div class='col'>
+        <q-input filled v-model="fields.NameLast" type="text" label="Last Name" />
+      </div>
+    </div>
+    <div class='row q-pb-sm'>
+      <div class='col'>
+        <q-input filled v-model="fields.Organization" type="text" label="Organization" />
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col'>
+        <q-input filled v-model="fields.EmailAddress" type="email" label="Email Address" />
+      </div>
+    </div>
+    <q-separator class='q-my-md' />
+    <div class='row q-pb-sm'>
+      <div class='col'>
+        <q-input filled v-model="fields.Comments" type="textarea" label="Comments" />
+      </div>
+    </div>
   </stellar-form-card>
 </template>
-
 <script>
 export default {
   data () {
     return {
       fields: {},
-      title: 'Join Slack',
+      title: this.$t('forms.JoinSlack.title'),
       actions: [
         {
-          label: 'Request',
+          label: this.$t('forms.JoinSlack.option'),
           icon: 'fab fa-slack text-grey-7',
           type: 'submit'
         }
@@ -23,7 +48,7 @@ export default {
   },
   methods: {
     onSubmit () {
-      console.log('Submit')
+      console.log(this.fields)
     },
     clearFields () {
       this.fields = {

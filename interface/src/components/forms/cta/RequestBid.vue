@@ -39,10 +39,10 @@ export default {
   data () {
     return {
       fields: {},
-      title: 'Request a Bid',
+      title: this.$t('forms.RequestBid.title'),
       actions: [
         {
-          label: 'Request',
+          label: this.$t('forms.RequestBid.option'),
           icon: 'fas fa-quote-left text-grey-7',
           type: 'submit'
         }

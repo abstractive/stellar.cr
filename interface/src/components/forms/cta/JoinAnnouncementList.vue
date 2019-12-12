@@ -2,19 +2,38 @@
   <stellar-form-card
     class='q-mb-lg'
     v-bind="{title, actions}">
-    Test
+    <div class='row'>
+      <div class='col q-pb-sm'>
+        <q-input filled v-model="fields.NameFirst" type="text" label="First Name" />
+      </div>
+      <div class='col q-px-sm'>
+        <q-input filled v-model="fields.NameMiddle" type="text" label="Middle Name" />
+      </div>
+      <div class='col'>
+        <q-input filled v-model="fields.NameLast" type="text" label="Last Name" />
+      </div>
+    </div>
+    <div class='row q-pb-sm'>
+      <div class='col'>
+        <q-input filled v-model="fields.Organization" type="text" label="Organization" />
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col'>
+        <q-input filled v-model="fields.EmailAddress" type="email" label="Email Address" />
+      </div>
+    </div>
   </stellar-form-card>
 </template>
-
 <script>
 export default {
   data () {
     return {
       fields: {},
-      title: 'Join the Announcement List',
+      title: this.$t('forms.JoinAnnouncementList.title'),
       actions: [
         {
-          label: 'Join',
+          label: this.$t('forms.JoinAnnouncementList.option'),
           icon: 'fas fa-bullhorn text-grey-7',
           type: 'submit'
         }

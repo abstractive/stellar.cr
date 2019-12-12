@@ -10,7 +10,7 @@
           <q-btn color="grey-7" round flat icon="more_vert">
             <q-menu fit anchor="bottom left" self="top left" auto-close>
               <div class="row no-wrap">
-                <q-btn flat align="right" class='full-width'
+                <q-btn size='md' dense flat align="right" class='full-width'
                   @click="onReset"
                   icon-right="fas fa-recycle text-grey-7"
                   :label="$t('reset.option')"
@@ -20,9 +20,8 @@
               <div v-if="options">
                 <div class="row no-wrap" v-for="button in options"
                   v-bind:key="button.label">
-                  <q-btn flat
+                  <q-btn size='md' dense flat
                     align="right" class='full-width'
-                    v-bind:class='button.class'
                     v-bind:to='button.to'
                     v-on:click='button.click'
                     v-bind:icon-right="button.icon"

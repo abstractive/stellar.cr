@@ -39,10 +39,10 @@ export default {
   data () {
     return {
       fields: {},
-      title: 'Request Contact',
+      title: this.$t('forms.RequestContact.title'),
       actions: [
         {
-          label: 'Request',
+          label: this.$t('forms.RequestContact.option'),
           icon: 'fas fa-phone text-grey-7',
           type: 'submit'
         }
