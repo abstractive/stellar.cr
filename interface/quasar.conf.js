@@ -11,9 +11,8 @@ module.exports = function (ctx) {
       'axios',
       'stellar-base',
       'stellar-cta',
-      'vuelidate',
       'lodash',
-      'prototype'
+      'vuelidate'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
