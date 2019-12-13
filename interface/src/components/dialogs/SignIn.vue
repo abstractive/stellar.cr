@@ -104,7 +104,7 @@ export default {
           this.$q.notify({
             color: 'positive',
             position: 'top',
-            message: 'Coming Soon',
+            message: this.$t('coming_soon'),
             icon: 'fas fa-exclamation-circle'
           })
         })
@@ -112,7 +112,7 @@ export default {
           this.$q.notify({
             color: 'negative',
             position: 'top',
-            message: 'Sign In Error',
+            message: this.$t('error.submission'),
             icon: 'fas fa-exclamation-triangle'
           })
         })

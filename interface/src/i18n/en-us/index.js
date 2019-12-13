@@ -1,12 +1,17 @@
 export default {
   coming_soon: 'Coming Soon',
   error: {
+    sign_in: 'There was an error while trying to sign you in.',
     submission: 'Your form submission failed.',
     form_invalid: 'Please correct the errors in your form.'
   },
   rules: {
     email: 'Must be valid email address.',
-    required: 'Required.'
+    required: 'Required.',
+    above_zero: 'Must be above zero.',
+    one_or_more: 'Must be 1 or more.',
+    one_or_more_dollars: 'Must be $1 or over.',
+    decimal: 'Must be a number.'
   },
   fields: {
     OK: 'OK',
@@ -26,7 +31,11 @@ export default {
     Suggestion: 'Suggestion',
     IdealTime: 'Ideal Time',
     IdealDate: 'Ideal Date',
-    LocationAddress: 'Location Address'
+    LocationAddress: 'Location Address',
+    InvoiceNumber: 'Invoice Number',
+    ContributionAmount: 'Contribution Amount',
+    PledgeAmount: 'Pledge Amount',
+    PaymentAmount: 'Payment Amount'
   },
   forms: {
     SendMessage: {
@@ -80,6 +89,18 @@ export default {
     ShareSuggestion: {
       title: 'Share a Suggestion',
       option: 'Share Now'
+    },
+    MakeContribution: {
+      title: 'Make a Contribution',
+      option: 'Contribute Now'
+    },
+    MakePledge: {
+      title: 'Make a Pledge',
+      option: 'Pledge Now'
+    },
+    MakePayment: {
+      title: 'Make a Payment',
+      option: 'Pay Now'
     }
   },
   reset: {

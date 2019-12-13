@@ -5,3 +5,4 @@
 /shard.lock
 /bin/artillery
 /bin/bazooka
+build/js/*

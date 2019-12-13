@@ -17,6 +17,10 @@
       <stellar-cta-join-slack />
       <stellar-cta-join-mattermost />
       <stellar-cta-join-gitlab />
+
+      <stellar-cta-make-contribution />
+      <stellar-cta-make-pledge />
+      <stellar-cta-make-payment />
     </div>
   </q-page>
 </template>

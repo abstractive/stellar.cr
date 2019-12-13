@@ -46,7 +46,13 @@ export default ({ Vue }) => {
         )
       },
 
+      clearFields () {
+        this.$v.fields.$reset()
+        this.fields = this.$_.mapValues(this.$v.fields.$params, () => { return '' })
+      },
+
       doSubmit (method, url, messages = {}) {
+        let component = this
         messages = Object.assign({
           success: 'coming_soon',
           failure: 'error.submission'
@@ -57,23 +63,24 @@ export default ({ Vue }) => {
           data: this.getFields(this)
         })
           .then((response) => {
-            this.$v.fields.$reset()
-            this.resetFields()
-            this.$q.notify({
+            component.clearFields()
+            component.$q.notify({
               color: 'positive',
               position: 'top',
-              message: this.$t(messages.success),
+              message: component.$t(messages.success),
               icon: 'fas fa-exclamation-circle'
             })
+            console.log(['success', response])
             return response
           })
-          .catch(() => {
-            this.$q.notify({
+          .catch((response) => {
+            component.$q.notify({
               color: 'negative',
               position: 'top',
-              message: this.$t(messages.failure),
+              message: component.$t(messages.failure),
               icon: 'fas fa-exclamation-triangle'
             })
+            console.log(['failure', response])
             return false
           })
       }

@@ -17,3 +17,11 @@ license: MIT
 dependencies:
   artillery:
     github: abstractive/artillery.cr
+  kilt:
+    github: jeromegn/kilt
+  crest:
+    github: mamantoha/crest
+  slack:
+    github: manastech/crystal_slack
+  retriable:
+    github: Sija/retriable.cr

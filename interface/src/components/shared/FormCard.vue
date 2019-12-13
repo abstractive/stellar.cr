@@ -55,7 +55,7 @@
 <script>
 export default {
   mounted () {
-    this.clearFields()
+    this.$parent.clearFields()
   },
   props: {
     title: String,
@@ -76,12 +76,8 @@ export default {
         cancel: true,
         persistent: true
       }).onOk(() => {
-        this.clearFields()
+        this.$parent.clearFields()
       })
-    },
-    clearFields () {
-      this.$parent.$v.fields.$reset()
-      this.$parent.fields = this.$_.mapValues(this.$parent.$v.fields.$params, () => { return '' })
     }
   }
 }
