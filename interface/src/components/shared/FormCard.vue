@@ -52,11 +52,10 @@
     </q-form>
   </q-card>
 </template>
-
 <script>
 export default {
-  created () {
-    this.$parent.clearFields()
+  mounted () {
+    this.clearFields()
   },
   props: {
     title: String,
@@ -67,8 +66,7 @@ export default {
     }
   },
   data () {
-    return {
-    }
+    return {}
   },
   methods: {
     onReset () {
@@ -78,8 +76,12 @@ export default {
         cancel: true,
         persistent: true
       }).onOk(() => {
-        this.$parent.clearFields()
+        this.clearFields()
       })
+    },
+    clearFields () {
+      this.$parent.$v.fields.$reset()
+      this.$parent.fields = this.$_.mapValues(this.$parent.$v.fields.$params, () => { return '' })
     }
   }
 }

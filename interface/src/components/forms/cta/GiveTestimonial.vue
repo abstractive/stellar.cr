@@ -66,37 +66,24 @@ export default {
   },
   validations: {
     fields: {
-      EmailAddress: {
-        required,
-        email
-      },
-      NameFirst: {
-        required
-      },
-      NameLast: {
-        required
-      },
-      Testimonial: {
-        required
-      }
+      NameFirst: { required },
+      NameMiddle: {},
+      NameLast: { required },
+      Organization: {},
+      EmailAddress: { required, email },
+      PhoneNumber: {},
+      Testimonial: { required }
     }
   },
   methods: {
     onSubmit () {
       if (this.testSubmit(this)) {
-        console.log(this.fields)
-      }
-    },
-    clearFields () {
-      this.$v.fields.$reset()
-      this.fields = {
-        NameFirst: '',
-        NameMiddle: '',
-        NameLast: '',
-        Organization: '',
-        EmailAddress: '',
-        PhoneNumber: '',
-        Testimonial: ''
+        let response = this.doSubmit(this, 'post', '/cta/testimonial')
+        if (response) {
+          console.log('pass')
+        } else {
+          console.log('fail')
+        }
       }
     }
   }

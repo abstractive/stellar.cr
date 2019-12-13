@@ -1,10 +1,7 @@
-// This is just an example,
-// so you can safely delete all default props below
-
 export default {
-  failed: 'Action failed',
-  success: 'Action was successful',
+  coming_soon: 'Coming Soon',
   error: {
+    submission: 'Your form submission failed.',
     form_invalid: 'Please correct the errors in your form.'
   },
   rules: {

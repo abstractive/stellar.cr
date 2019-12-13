@@ -9,10 +9,10 @@ module.exports = function (ctx) {
     boot: [
       'i18n',
       'axios',
-      'stellar-base',
-      'stellar-cta',
       'lodash',
-      'vuelidate'
+      'stellar/base',
+      'stellar/forms',
+      'stellar/cta'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -64,7 +64,7 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
-      distDir: "../build/",
+      distDir: '../build/',
       scopeHoisting: true,
       // vueRouterMode: 'history',
       // showProgress: false,
@@ -86,14 +86,15 @@ module.exports = function (ctx) {
           }
         })
       },
-      chainWebpack(chain) {
-          chain.plugin('copy-root-over-public')
+      chainWebpack (chain) {
+        chain.plugin('copy-root-over-public')
           .use(CopyWebpackPlugin, [
-              [{
-                  from: appPaths.resolve.src('../../build/'),
-                  to: './',
-                  ignore: ['.*']
-              }]
+            [{
+              // eslint-disable-next-line no-undef
+              from: appPaths.resolve.src('../../build/'),
+              to: './',
+              ignore: ['.*']
+            }]
           ])
       }
     },
@@ -141,7 +142,7 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/developing-cordova-apps/configuring-cordova
     cordova: {
-      id: 'org.delimiter.abstractive.stellar',
+      id: 'org.delimiter.abstractive.stellar'
     },
 
     // https://quasar.dev/quasar-cli/developing-capacitor-apps/configuring-capacitor
