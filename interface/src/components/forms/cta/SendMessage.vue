@@ -91,6 +91,7 @@ export default {
       }
     },
     clearFields () {
+      this.$v.fields.$reset()
       this.fields = {
         NameFirst: '',
         NameMiddle: '',
@@ -98,6 +99,7 @@ export default {
         Organization: '',
         EmailAddress: '',
         PhoneNumber: '',
+        Subject: '',
         Message: ''
       }
     }
