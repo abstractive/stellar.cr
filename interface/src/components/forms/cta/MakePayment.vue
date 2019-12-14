@@ -93,7 +93,7 @@ export default {
   methods: {
     onSubmit () {
       if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/make_payment')
+        let response = this.doSubmit('post', '/cta/make/payment')
         if (response) {
           console.log('pass')
         } else {

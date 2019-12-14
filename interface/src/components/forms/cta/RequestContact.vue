@@ -73,7 +73,7 @@ export default {
   methods: {
     onSubmit () {
       if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/request_contact')
+        let response = this.doSubmit('post', '/cta/request/contact')
         if (response) {
           console.log('pass')
         } else {

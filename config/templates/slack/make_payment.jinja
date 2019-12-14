@@ -1,0 +1,13 @@
+:inbox_tray: *New `Payment`*
+{% include "slack/contact_information.jinja" %}{%
+if InvoiceNumber %}
+> *Invoice Number*: `{{InvoiceNumber}}`{% endif %}{%
+if PaymentAmount %}
+> *Payment Amount*: `${{PaymentAmount}}`
+{% endif %}
+{% if Comments %}
+_Comments_:
+```
+{{Comments}}
+```
+{% endif %}

@@ -1,0 +1,13 @@
+:inbox_tray: *New `Suggestion`*
+{% include "slack/contact_information.jinja" %}
+{% if IdeaTitle %}
+_Idea Title_:
+```
+{{IdeaTitle}}
+```
+{% endif %}{% if Suggestion %}
+_Suggestion_:
+```
+{{Suggestion}}
+```
+{% endif %}

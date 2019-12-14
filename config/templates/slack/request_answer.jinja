@@ -1,0 +1,13 @@
+:inbox_tray: *New `Answer Request`*
+{% include "slack/contact_information.jinja" %}
+{% if Subject %}
+_Subject_:
+```
+{{Subject}}
+```
+{% endif %}{% if Question %}
+_Question_:
+```
+{{Question}}
+```
+{% endif %}

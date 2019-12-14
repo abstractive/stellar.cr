@@ -9,3 +9,5 @@ environments:
     domains:
       - stellar.artillery.cloud
 public: build/
+presence:
+  name: Stellar

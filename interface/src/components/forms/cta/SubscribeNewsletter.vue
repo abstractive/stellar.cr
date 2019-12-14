@@ -34,10 +34,10 @@ export default {
   data () {
     return {
       fields: {},
-      title: this.$t('forms.NewsletterSubscription.title'),
+      title: this.$t('forms.SubscribeNewsletter.title'),
       actions: [
         {
-          label: this.$t('forms.NewsletterSubscription.option'),
+          label: this.$t('forms.SubscribeNewsletter.option'),
           icon: 'far fa-newspaper text-grey-7',
           type: 'submit'
         }
@@ -56,7 +56,7 @@ export default {
   methods: {
     onSubmit () {
       if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/newsletter_subscription')
+        let response = this.doSubmit('post', '/cta/subscribe/newsletter')
         if (response) {
           console.log('pass')
         } else {

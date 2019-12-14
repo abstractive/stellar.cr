@@ -34,10 +34,10 @@ export default {
   data () {
     return {
       fields: {},
-      title: this.$t('forms.JoinAnnouncementList.title'),
+      title: this.$t('forms.SubscribeAnnouncementList.title'),
       actions: [
         {
-          label: this.$t('forms.JoinAnnouncementList.option'),
+          label: this.$t('forms.SubscribeAnnouncementList.option'),
           icon: 'fas fa-bullhorn text-grey-7',
           type: 'submit'
         }
@@ -56,7 +56,7 @@ export default {
   methods: {
     onSubmit () {
       if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/join_announcement_list')
+        let response = this.doSubmit('post', '/cta/subscribe/announcement')
         if (response) {
           console.log('pass')
         } else {

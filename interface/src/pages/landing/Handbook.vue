@@ -12,6 +12,7 @@
         tempor incididunt ut labore et dolore magna aliqua.
       </q-card-section>
     </q-card>
+    <stellar-cta-request-answer />
   </q-page>
 </template>
 <script>

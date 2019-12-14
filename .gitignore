@@ -6,3 +6,5 @@
 /bin/artillery
 /bin/bazooka
 build/js/*
+.gitsecret/keys/random_seed
+secrets.yml

@@ -62,13 +62,14 @@ export default {
       NameMiddle: {},
       NameLast: { required },
       Organization: {},
-      EmailAddress: { required, email }
+      EmailAddress: { required, email },
+      Comments: {}
     }
   },
   methods: {
     onSubmit () {
       if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/message')
+        let response = this.doSubmit('post', '/cta/join/gitlab')
         if (response) {
           console.log('pass')
         } else {

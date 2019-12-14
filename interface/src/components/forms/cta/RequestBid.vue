@@ -80,7 +80,7 @@ export default {
   methods: {
     onSubmit () {
       if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/request_bid')
+        let response = this.doSubmit('post', '/cta/request/bid')
         if (response) {
           console.log('pass')
         } else {

@@ -54,10 +54,10 @@ export default {
   data () {
     return {
       fields: {},
-      title: this.$t('forms.GiveTestimonial.title'),
+      title: this.$t('forms.ShareTestimonial.title'),
       actions: [
         {
-          label: this.$t('forms.GiveTestimonial.option'),
+          label: this.$t('forms.ShareTestimonial.option'),
           icon: 'fas fa-paper-plane text-grey-7',
           type: 'submit'
         }
@@ -78,7 +78,7 @@ export default {
   methods: {
     onSubmit () {
       if (this.testSubmit(this)) {
-        let response = this.doSubmit(this, 'post', '/cta/testimonial')
+        let response = this.doSubmit(this, 'post', '/cta/share/testimonial')
         if (response) {
           console.log('pass')
         } else {

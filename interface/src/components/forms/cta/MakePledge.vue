@@ -87,7 +87,7 @@ export default {
   methods: {
     onSubmit () {
       if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/make_pledge')
+        let response = this.doSubmit('post', '/cta/make/pledge')
         if (response) {
           console.log('pass')
         } else {

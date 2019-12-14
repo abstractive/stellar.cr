@@ -1,5 +1,5 @@
 name: stellar
-version: 0.0.1.5
+version: 0.0.2.0
 crystal: 0.31.1
 
 github: abstractive/stellar.cr
@@ -17,8 +17,8 @@ license: MIT
 dependencies:
   artillery:
     github: abstractive/artillery.cr
-  kilt:
-    github: jeromegn/kilt
+  crinja:
+    github: straight-shoota/crinja
   crest:
     github: mamantoha/crest
   slack:

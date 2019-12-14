@@ -71,7 +71,7 @@ export default {
   methods: {
     onSubmit () {
       if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/join_slack')
+        let response = this.doSubmit('post', '/cta/join/slack')
         if (response) {
           console.log('pass')
         } else {

@@ -69,7 +69,7 @@ export default {
   methods: {
     onSubmit () {
       if (this.testSubmit(this)) {
-        let response = this.doSubmit('post', '/cta/join_mattermost')
+        let response = this.doSubmit('post', '/cta/join/mattermost')
         if (response) {
           console.log('pass')
         } else {

@@ -27,6 +27,7 @@ export default {
     Subject: 'Subject',
     Message: 'Message',
     Comments: 'Comments',
+    Question: 'Question',
     Testimonial: 'Testimonial',
     Suggestion: 'Suggestion',
     IdealTime: 'Ideal Time',
@@ -54,11 +55,11 @@ export default {
       title: 'Join the Mattermost Workspace',
       option: 'Join Now'
     },
-    JoinAnnouncementList: {
-      title: 'Join the Announcement List',
-      option: 'Join Now'
+    SubscribeAnnouncementList: {
+      title: 'Subscribe to the Announcement List',
+      option: 'Subscribe Now'
     },
-    NewsletterSubscription: {
+    SubscribeNewsletter: {
       title: 'Subscribe to the Newsletter',
       option: 'Subscribe Now'
     },
@@ -69,6 +70,10 @@ export default {
     RequestAccess: {
       title: 'Request Access',
       option: 'Request Now'
+    },
+    RequestAnswer: {
+      title: 'Ask a Question',
+      option: 'Ask Now'
     },
     RequestAppointment: {
       title: 'Request an Appointment',
@@ -82,9 +87,9 @@ export default {
       title: 'Request a Bid',
       option: 'Request Now'
     },
-    GiveTestimonial: {
-      title: 'Give a Testimonial',
-      option: 'Give Now'
+    ShareTestimonial: {
+      title: 'Share a Testimonial',
+      option: 'Share Now'
     },
     ShareSuggestion: {
       title: 'Share a Suggestion',
