@@ -1,3 +1,6 @@
+# v201912161344-7Ng4 0.0.4.2
+* Added bin/stellar `mountpoint` and `launcher` which check for built code, otherwise builds that, then starts.
+
 # v201912161302-7Ng4 0.0.4.1
 * Organized `config/` better with `environments/`
 * Changed `interface/` to `face/`

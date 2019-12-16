@@ -1,5 +1,5 @@
 name: stellar
-version: 0.0.4.0
+version: 0.0.4.2
 crystal: 0.31.1
 
 github: abstractive/stellar.cr

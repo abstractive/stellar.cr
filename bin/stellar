@@ -9,7 +9,25 @@ function log { echo "$(timestamp) > $1"; }
 #de Deploy: Package executable and interface application build into container and push.
 #de Monitor: Console tap for Artillery microservices and access to visualize mesh activity.
 
+export ARTILLERY_CONFIGURATION='stellar.yml'
+
 case "${@: -1}" in
+  mountpoint )
+    if [[ ! -f lib/artillery/bin/artillery-mountpoint ]]; then
+      log "Building presence mountpoint."
+      cd lib/artillery/
+      shards build artillery-mountpoint
+      cd ../../
+    fi
+    lib/artillery/bin/artillery-mountpoint
+    ;;
+  launcher )
+    if [[ ! -f bin/presence ]]; then
+      log "Building presence launcher."
+      shards build presence
+    fi
+    bin/presence
+    ;;
   init )
     #de Clone face/ into current presence and build initial interface.
     if [[ ! -d face ]]; then
