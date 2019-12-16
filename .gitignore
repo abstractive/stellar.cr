@@ -8,3 +8,4 @@
 /bin/presence
 .gitsecret/keys/random_seed
 secrets.yml
+logs/*.*
