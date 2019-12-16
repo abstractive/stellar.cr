@@ -11,10 +11,10 @@ function log { echo "$(timestamp) > $1"; }
 
 case "${@: -1}" in
   init )
-    #de Clone interface/ into current presence and build initial interface.
-    if [[ ! -d interface ]]; then
-      cp -R lib/stellar/interface .
-      cd interface/
+    #de Clone face/ into current presence and build initial interface.
+    if [[ ! -d face ]]; then
+      cp -R lib/stellar/face .
+      cd face/
       npm install
     else
       log "Interface already exists."

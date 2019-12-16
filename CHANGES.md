@@ -1,3 +1,7 @@
+# v201912161302-7Ng4 0.0.4.1
+* Organized `config/` better with `environments/`
+* Changed `interface/` to `face/`
+
 # v201912161201-7Ng4 0.0.4.0
 * Many, many versions and changes not noted over the last four days.
 * Essentially completed the CTA feature-set.
