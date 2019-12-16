@@ -6,6 +6,5 @@
 /bin/artillery
 /bin/bazooka
 /bin/presence
-build/js/*
 .gitsecret/keys/random_seed
 secrets.yml
