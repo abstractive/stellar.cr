@@ -54,6 +54,7 @@ import { required, email } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
+      action: '/cta/request/bid',
       fields: {},
       title: this.$t('forms.RequestBid.title'),
       actions: [
@@ -78,15 +79,14 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
-      if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/request/bid')
-        if (response) {
-          console.log('pass')
-        } else {
-          console.log('fail')
-        }
-      }
+    afterSubmit (response) {
+      this.acknowledgeSuccess(
+        'success.submission',
+        [
+          ['success.Requesting', ['words.bid']],
+          'success.contact_asap'
+        ]
+      )
     }
   }
 }

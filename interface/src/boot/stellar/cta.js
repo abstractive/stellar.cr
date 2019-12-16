@@ -1,6 +1,8 @@
 import StellarCTASendMessage from 'components/forms/cta/SendMessage.vue'
 import StellarCTAShareTestimonial from 'components/forms/cta/ShareTestimonial.vue'
 import StellarCTAShareSuggestion from 'components/forms/cta/ShareSuggestion.vue'
+import StellarCTAShareNeed from 'components/forms/cta/ShareNeed.vue'
+import StellarCTAShareGoal from 'components/forms/cta/ShareGoal.vue'
 
 import StellarCTAMakeContribution from 'components/forms/cta/MakeContribution.vue'
 import StellarCTAMakePledge from 'components/forms/cta/MakePledge.vue'
@@ -26,7 +28,8 @@ export default async ({ Vue }) => {
 
   Vue.component('stellar-cta-share-testimonial', StellarCTAShareTestimonial)
   Vue.component('stellar-cta-share-suggestion', StellarCTAShareSuggestion)
-  //de Vue.component('stellar-cta-share-need', StellarCTAShareNeed)
+  Vue.component('stellar-cta-share-need', StellarCTAShareNeed)
+  Vue.component('stellar-cta-share-goal', StellarCTAShareGoal)
 
   Vue.component('stellar-cta-make-contribution', StellarCTAMakeContribution)
   Vue.component('stellar-cta-make-pledge', StellarCTAMakePledge)

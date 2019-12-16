@@ -1,6 +1,6 @@
 <template>
   <q-card flat bordered class="bg-grey-3">
-    <q-form @submit.prevent="$parent.onSubmit()"
+    <q-form @submit.prevent="$parent.doSubmit()"
             @reset="onReset"
             ref='form'>
       <q-card-section>

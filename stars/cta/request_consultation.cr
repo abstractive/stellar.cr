@@ -3,13 +3,13 @@ module Stellar
     class RequestConsultation < Star
       vector :post, "/cta/request/consultation"
       def post
-        if payload = @request.data
-          if body = render_template("slack/request_consultation", payload)
-            Stellar::Slack.message(body)
-          end
-          success({ success: true }.to_json)
+        if @payload
+          slack_templated_message("cta_request_consultation")
+          sendgrid_host_notice("cta_request_consultation", "A new consultation request arrived.")
+          sendgrid_guest_notice("cta_request_consultation", "Thank you for your consultation request.")
+          success({ "success" => true })
         else
-          puts "No payload."
+          error_payload_missing
         end
       end
     end

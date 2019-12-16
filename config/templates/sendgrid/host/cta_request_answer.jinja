@@ -1,0 +1,7 @@
+An answer request came in:<br/><br/>
+{% include "sendgrid/shared/contact_information.jinja" %}
+{% include "sendgrid/shared/subject.jinja" %}
+{% if Question %}
+<b>Question:</b><br/>
+{{Question}}<br>
+{% endif %}

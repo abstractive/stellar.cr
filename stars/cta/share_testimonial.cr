@@ -3,13 +3,13 @@ module Stellar
     class ShareTestimonial < Star
       vector :post, "/cta/share/testimonial"
       def post
-        if payload = @request.data
-          if body = render_template("slack/share_testimonial", payload)
-            Stellar::Slack.message(body)
-          end
-          success({ success: true }.to_json)
+        if @payload
+          slack_templated_message("cta_share_testimonial")
+          sendgrid_host_notice("cta_share_testimonial", "A new testimonial arrived.")
+          sendgrid_guest_notice("cta_share_testimonial", "Thank you for sharing your testimonial.")
+          success({ "success" => true })
         else
-          puts "No payload."
+          error_payload_missing
         end
       end
     end

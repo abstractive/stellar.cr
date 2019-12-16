@@ -5,7 +5,7 @@ module Stellar
       vector :post, "/participant/authenticate"
 
       def post
-        success({ success: true }.to_json)
+        success({ "success" => true })
       end
 
     end

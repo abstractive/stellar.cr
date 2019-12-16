@@ -33,6 +33,7 @@ import { required, email } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
+      action: '/cta/subscribe/announcement',
       fields: {},
       title: this.$t('forms.SubscribeAnnouncementList.title'),
       actions: [
@@ -54,15 +55,13 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
-      if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/subscribe/announcement')
-        if (response) {
-          console.log('pass')
-        } else {
-          console.log('fail')
-        }
-      }
+    afterSubmit (response) {
+      this.acknowledgeSuccess(
+        'success.submission',
+        [
+          ['success.Subscribing', ['words.announcement']]
+        ]
+      )
     }
   }
 }

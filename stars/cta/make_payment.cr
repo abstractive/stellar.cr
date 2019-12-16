@@ -3,13 +3,13 @@ module Stellar
     class MakePayment < Star
       vector :post, "/cta/make/payment"
       def post
-        if payload = @request.data
-          if body = render_template("slack/make_payment", payload)
-            Stellar::Slack.message(body)
-          end
-          success({ success: true }.to_json)
+        if @payload
+          slack_templated_message("cta_make_payment")
+          sendgrid_host_notice("cta_make_payment", "A new payment commitment arrived.")
+          sendgrid_guest_notice("cta_make_payment", "Thank you for your payment commitment.")
+          success({ "success" => true })
         else
-          puts "No payload."
+          error_payload_missing
         end
       end
     end

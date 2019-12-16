@@ -1,3 +1,9 @@
+# v201912161201-7Ng4 0.0.4.0
+* Many, many versions and changes not noted over the last four days.
+* Essentially completed the CTA feature-set.
+* Uses `git secret` for `secrets.yml` per https://github.com/sobolevn/git-secret
+* Full data validation on the client side, forwarding of CTA data to Slack, copy to host by SendGrid, then acknowledgement by SendGrid to guest.
+
 # v201912120128-2Hg8 0.0.1.0
 * Added localization in the process of adding all the forms for CTAs
 * Reworked drawers, navigation, and added minified sidebar

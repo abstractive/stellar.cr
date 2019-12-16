@@ -103,6 +103,7 @@ import { required, email } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
+      action: '/cta/request/appointment',
       fields: {},
       proxyIdealTime: '',
       proxyIdealDate: '',
@@ -132,15 +133,14 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
-      if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/request/appointment')
-        if (response) {
-          console.log('pass')
-        } else {
-          console.log('fail')
-        }
-      }
+    afterSubmit (response) {
+      this.acknowledgeSuccess(
+        'success.submission',
+        [
+          ['success.Requesting', ['words.appointment']],
+          'success.contact_asap'
+        ]
+      )
     },
     saveIdealTime () {
       this.fields.IdealTime = this.proxyIdealTime

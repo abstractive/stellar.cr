@@ -1,0 +1,7 @@
+A suggestion came in:<br/><br/>
+{% include "sendgrid/shared/contact_information.jinja" %}
+{% include "sendgrid/shared/title.jinja" %}
+{% if Suggestion %}
+<b>Suggestion:</b><br/>
+{{Suggestion}}<br>
+{% endif %}

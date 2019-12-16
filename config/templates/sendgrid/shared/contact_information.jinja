@@ -1,0 +1,5 @@
+<b>Contact Name:</b> {% include "shared/guest_full_name.jinja" %}<br/>
+
+{% if Organization %}<b>Organization:</b> {{Organization}}<br/>{% endif %}
+{% if EmailAddress %}<b>Email Address:</b> <a href='mailto:{{EmailAddress}}'>{{EmailAddress}}</a><br/>{% endif %}
+{% if PhoneNumber %}<b>Phone Number:</b> {{PhoneNumber}}<br/>{% endif %}

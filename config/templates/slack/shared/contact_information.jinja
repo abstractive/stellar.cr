@@ -1,0 +1,5 @@
+> *Presence:* `{{PresenceName}}`
+> *Contact Name:* `{% include "shared/guest_full_name.jinja" %}`
+{% if Organization %}> *Organization:* {{Organization}}{% endif %}
+{% if EmailAddress %}> *Email Address:* <mailto:{{EmailAddress}}>{% endif %}
+{% if PhoneNumber %}> *Phone Number:* {{PhoneNumber}}{% endif %}

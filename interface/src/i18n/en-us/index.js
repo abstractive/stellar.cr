@@ -5,6 +5,35 @@ export default {
     submission: 'Your form submission failed.',
     form_invalid: 'Please correct the errors in your form.'
   },
+  success: {
+    submission: 'Submission Successful',
+    contact_asap: 'Stand by to receive a follow-up as soon as possible.',
+    JoiningWorkspace: 'Thank you for your request to join our {0} workspace.',
+    MakingCommitment: 'Thank you for your {0} commitment.',
+    Requesting: 'Thank you for your {0} request.',
+    ThanksFor: 'Thank you for your {0}.',
+    Sharing: 'Thank you for sharing your {0}.',
+    Subscribing: 'Thank you for your {0} subscription.'
+  },
+  words: {
+    GitLab: 'GitLab',
+    Mattermost: 'Mattermost',
+    Slack: 'Slack',
+    contribution: 'contribution',
+    payment: 'payment',
+    pledge: 'pledge',
+    access: 'access',
+    appointment: 'appointment',
+    bid: 'bid',
+    consultation: 'consultation',
+    contact: 'contact',
+    message: 'message',
+    suggestion: 'suggestion',
+    newsletter: 'newsletter',
+    announcement: 'announcement list',
+    need: 'need',
+    goal: 'goal'
+  },
   rules: {
     email: 'Must be valid email address.',
     required: 'Required.',
@@ -23,13 +52,16 @@ export default {
     NameFirst: 'First Name',
     Organization: 'Organization',
     ProjectTitle: 'Project Title',
-    IdeaTitle: 'Idea Title',
+    Title: 'Title',
     Subject: 'Subject',
     Message: 'Message',
     Comments: 'Comments',
     Question: 'Question',
+    Description: 'Description',
     Testimonial: 'Testimonial',
     Suggestion: 'Suggestion',
+    Need: 'Need',
+    Goal: 'Goal',
     IdealTime: 'Ideal Time',
     IdealDate: 'Ideal Date',
     LocationAddress: 'Location Address',
@@ -93,6 +125,14 @@ export default {
     },
     ShareSuggestion: {
       title: 'Share a Suggestion',
+      option: 'Share Now'
+    },
+    ShareNeed: {
+      title: 'Share a Need',
+      option: 'Share Now'
+    },
+    ShareGoal: {
+      title: 'Share a Goal',
       option: 'Share Now'
     },
     MakeContribution: {

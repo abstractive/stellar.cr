@@ -15,6 +15,8 @@
       <div class="q-py-sm row items-start q-gutter-md">
       <stellar-cta-share-testimonial />
       <stellar-cta-share-suggestion />
+      <stellar-cta-share-need />
+      <stellar-cta-share-goal />
       <stellar-cta-subscribe-announcement-list />
       <stellar-cta-subscribe-newsletter />
     </div>

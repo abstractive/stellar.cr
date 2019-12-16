@@ -47,6 +47,7 @@ import { required, email } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
+      action: '/cta/join/slack',
       fields: {},
       title: this.$t('forms.JoinSlack.title'),
       actions: [
@@ -69,15 +70,14 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
-      if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/join/slack')
-        if (response) {
-          console.log('pass')
-        } else {
-          console.log('fail')
-        }
-      }
+    afterSubmit (response) {
+      this.acknowledgeSuccess(
+        'success.submission',
+        [
+          ['success.JoiningWorkspace', ['words.Slack']],
+          'success.contact_asap'
+        ]
+      )
     }
   }
 }

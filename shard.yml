@@ -1,5 +1,5 @@
 name: stellar
-version: 0.0.2.0
+version: 0.0.4.0
 crystal: 0.31.1
 
 github: abstractive/stellar.cr
@@ -14,6 +14,10 @@ authors:
 
 license: MIT
 
+targets:
+  presence:
+    main: presence.cr
+
 dependencies:
   artillery:
     github: abstractive/artillery.cr
@@ -25,3 +29,5 @@ dependencies:
     github: manastech/crystal_slack
   retriable:
     github: Sija/retriable.cr
+  sendgrid:
+    github: dlanileonardo/sendgrid.cr

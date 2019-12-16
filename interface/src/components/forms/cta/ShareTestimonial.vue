@@ -53,6 +53,7 @@ import { required, email } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
+      action: '/cta/share/testimonial',
       fields: {},
       title: this.$t('forms.ShareTestimonial.title'),
       actions: [
@@ -76,15 +77,14 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
-      if (this.testSubmit(this)) {
-        let response = this.doSubmit(this, 'post', '/cta/share/testimonial')
-        if (response) {
-          console.log('pass')
-        } else {
-          console.log('fail')
-        }
-      }
+    afterSubmit (response) {
+      this.acknowledgeSuccess(
+        'success.submission',
+        [
+          ['success.ThanksFor', ['words.testimonial']],
+          'success.contact_asap'
+        ]
+      )
     }
   }
 }

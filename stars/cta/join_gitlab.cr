@@ -3,13 +3,13 @@ module Stellar
     class JoinGitLab < Star
       vector :post, "/cta/join/gitlab"
       def post
-        if payload = @request.data
-          if body = render_template("slack/join_gitlab", payload)
-            Stellar::Slack.message(body)
-          end
-          success({ success: true }.to_json)
+        if @payload
+          slack_templated_message("cta_join_gitlab")
+          sendgrid_host_notice("cta_join_gitlab", "A request to join our GitLab workspace arrived.")
+          sendgrid_guest_notice("cta_join_gitlab", "Thank you for asking to join our GitLab workspace.")
+          success({ "success" => true })
         else
-          puts "No payload."
+          error_payload_missing
         end
       end
     end

@@ -1,0 +1,4 @@
+A consultation request came in:<br/><br/>
+{% include "sendgrid/shared/contact_information.jinja" %}
+{% if ProjectTitle %}<b>Project Title:</b> {{ProjectTitle}}<br>{% endif %}
+{% include "sendgrid/shared/comments.jinja" %}

@@ -1,0 +1,5 @@
+:inbox_tray: *New `Pledge`*
+{% include "slack/shared/contact_information.jinja" %}{%
+if PledgeAmount %}
+> *Pledge Amount*: `${{PledgeAmount}}`
+{% endif %}{% include "slack/shared/comments.jinja" %}

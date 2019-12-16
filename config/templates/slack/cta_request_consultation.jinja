@@ -1,0 +1,9 @@
+:inbox_tray: *New `Consultation Request`*
+{% include "slack/shared/contact_information.jinja" %}{%
+include "slack/shared/ideal_datetime.jinja" %}{%
+include "slack/shared/type.jinja" %}{%
+if ProjectTitle %}
+_Project Title_:
+```
+{{ProjectTitle}}
+```{% endif %}{% include "slack/shared/comments.jinja" %}

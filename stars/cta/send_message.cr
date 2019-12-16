@@ -3,13 +3,13 @@ module Stellar
     class SendMessage < Star
       vector :post, "/cta/send/message"
       def post
-        if payload = @request.data
-          if body = render_template("slack/send_message", payload)
-            Stellar::Slack.message(body)
-          end
-          success({ success: true }.to_json)
+        if @payload
+          slack_templated_message("cta_send_message")
+          sendgrid_host_notice("cta_send_message", "A new message arrived.")
+          sendgrid_guest_notice("cta_send_message", "Thank you for your message.")
+          success({ "success" => true })
         else
-          puts "No payload."
+          error_payload_missing
         end
       end
     end

@@ -56,6 +56,7 @@ import { required, email } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
+      action: '/cta/send/message',
       fields: {},
       title: this.$t('forms.SendMessage.title'),
       actions: [
@@ -80,15 +81,14 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
-      if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/send/message')
-        if (response) {
-          console.log('pass')
-        } else {
-          console.log('fail')
-        }
-      }
+    afterSubmit (response) {
+      this.acknowledgeSuccess(
+        'success.submission',
+        [
+          ['success.ThanksFor', ['words.message']],
+          'success.contact_asap'
+        ]
+      )
     }
   }
 }

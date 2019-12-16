@@ -45,6 +45,7 @@ import { required, email } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
+      action: '/cta/join/mattermost',
       fields: {},
       title: this.$t('forms.JoinMattermost.title'),
       actions: [
@@ -67,15 +68,14 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
-      if (this.testSubmit(this)) {
-        let response = this.doSubmit('post', '/cta/join/mattermost')
-        if (response) {
-          console.log('pass')
-        } else {
-          console.log('fail')
-        }
-      }
+    afterSubmit (response) {
+      this.acknowledgeSuccess(
+        'success.submission',
+        [
+          ['success.JoiningWorkspace', ['words.Mattermost']],
+          'success.contact_asap'
+        ]
+      )
     }
   }
 }

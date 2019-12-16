@@ -1,0 +1,5 @@
+A commitment to make a payment came in:<br/><br/>
+{% include "sendgrid/shared/contact_information.jinja" %}
+{% if InvoiceNumber %}<b>Invoice Number:</b> {{InvoiceNumber}}<br>{% endif %}
+{% if PaymentAmount %}<b>Payment Amount:</b> ${{PaymentAmount}}<br>{% endif %}
+{% include "sendgrid/shared/comments.jinja" %}

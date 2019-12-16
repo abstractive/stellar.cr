@@ -61,6 +61,7 @@ import { required, email, decimal, minValue } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
+      action: '/cta/make/pledge',
       fields: {},
       title: this.$t('forms.MakePledge.title'),
       actions: [
@@ -85,15 +86,14 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
-      if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/make/pledge')
-        if (response) {
-          console.log('pass')
-        } else {
-          console.log('fail')
-        }
-      }
+    afterSubmit (response) {
+      this.acknowledgeSuccess(
+        'success.submission',
+        [
+          ['success.MakingCommitment', ['words.pledge']],
+          'success.contact_asap'
+        ]
+      )
     }
   }
 }

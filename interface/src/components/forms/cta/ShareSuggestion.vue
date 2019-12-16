@@ -38,7 +38,7 @@
     <q-separator class='q-my-md' />
     <div class='row q-pb-sm'>
       <div class='col'>
-        <q-input filled v-model="fields.IdeaTitle" type="text" :label="$t('fields.IdeaTitle')" />
+        <q-input filled v-model="fields.Title" type="text" :label="$t('fields.Title')" />
       </div>
     </div>
     <div class='row q-pb-sm'>
@@ -58,6 +58,7 @@ import { required, email } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
+      action: '/cta/share/suggestion',
       fields: {},
       title: this.$t('forms.ShareSuggestion.title'),
       actions: [
@@ -77,20 +78,19 @@ export default {
       Organization: {},
       EmailAddress: { required, email },
       PhoneNumber: {},
-      IdeaTitle: {},
+      Title: {},
       Suggestion: {}
     }
   },
   methods: {
-    onSubmit () {
-      if (this.testSubmit()) {
-        let response = this.doSubmit('post', '/cta/share/suggestion')
-        if (response) {
-          console.log('pass')
-        } else {
-          console.log('fail')
-        }
-      }
+    afterSubmit (response) {
+      this.acknowledgeSuccess(
+        'success.submission',
+        [
+          ['success.Sharing', ['words.suggestion']],
+          'success.contact_asap'
+        ]
+      )
     }
   }
 }
