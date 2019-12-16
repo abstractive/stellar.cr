@@ -1,13 +1,13 @@
 port:
-  http: 1370
-  zeromq: 13700
+  http: 1110
+  zeromq: 11100
 environments:
   development:
     launchers: 3
   production:
     launchers: 3
     domains:
-      - stellar.artillery.cloud
+      - stellar.freed.network
 public: build/
 presence:
   name: Stellar

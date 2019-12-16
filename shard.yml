@@ -16,7 +16,7 @@ license: MIT
 
 targets:
   presence:
-    main: presence.cr
+    main: src/processes/presence.cr
 
 dependencies:
   artillery:
