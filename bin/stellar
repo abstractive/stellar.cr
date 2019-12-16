@@ -12,6 +12,12 @@ function log { echo "$(timestamp) > $1"; }
 export ARTILLERY_CONFIGURATION='stellar.yml'
 
 case "${@: -1}" in
+  console )
+    tail -f logs/console.log
+    ;;
+  errors )
+    tail -f logs/errors.log
+    ;;
   mountpoint )
     if [[ ! -f lib/artillery/bin/artillery-mountpoint ]]; then
       log "Building presence mountpoint."
@@ -19,14 +25,16 @@ case "${@: -1}" in
       shards build artillery-mountpoint
       cd ../../
     fi
-    lib/artillery/bin/artillery-mountpoint
+    log "Starting Artillery::Mountpoint with output to logs/"
+    lib/artillery/bin/artillery-mountpoint 2> logs/errors.log > logs/console.log
     ;;
   launcher )
     if [[ ! -f bin/presence ]]; then
       log "Building presence launcher."
       shards build presence
     fi
-    bin/presence
+    log "Starting Artillery::Launcher with output to logs/"
+    bin/presence 2> logs/errors.log 2> logs/console.log
     ;;
   init )
     #de Clone face/ into current presence and build initial interface.
