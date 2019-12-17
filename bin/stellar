@@ -16,9 +16,26 @@ case "${@: -1}" in
   console )
     tail -f logs/console.log
     ;;
+
   errors )
     tail -f logs/errors.log
     ;;
+
+  status )
+    #de Need to distinguish between processes running, if multiple presences per environment.
+    #de Containerization will remove the need for this, if presences are isolated
+    #de but that will not likely be the primary scenario going forward.
+    log "Running stellar processes:"
+    ps aux | grep stellar
+    ;;
+
+  start )
+    #de Need to check for 
+    log "Starting both Mountpoint and Launcher for Artillery //"
+    bin/stellar mountpoint
+    bin/stellar launcher
+    ;;
+  
   mountpoint )
     if [[ ! -f lib/artillery/bin/artillery-mountpoint ]]; then
       log "Building presence mountpoint."
@@ -27,7 +44,8 @@ case "${@: -1}" in
       cd ../../
     fi
     log "Starting Artillery::Mountpoint with output to logs/"
-    lib/artillery/bin/artillery-mountpoint 2> logs/errors.log > logs/console.log
+    lib/artillery/bin/artillery-mountpoint 2>> logs/errors.log 1>> logs/console.log &
+    log "Artillery::Mountpoint running //"
     ;;
   launcher )
     if [[ ! -f bin/presence ]]; then
@@ -35,7 +53,9 @@ case "${@: -1}" in
       shards build presence
     fi
     log "Starting Artillery::Launcher with output to logs/"
-    bin/presence 2> logs/errors.log 2> logs/console.log
+    bin/presence 2>> logs/errors.log 1>> logs/console.log &
+    log "Artillery::Launcher running. Now opening console //"
+    bin/stellar console
     ;;
   init )
     #de Clone face/ into current presence and build initial interface.
