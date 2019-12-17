@@ -27,6 +27,7 @@ case "${@: -1}" in
     #de but that will not likely be the primary scenario going forward.
     log "Running stellar processes:"
     ps aux | grep stellar
+    ps aux | grep presence
     ;;
 
   start )
@@ -54,7 +55,8 @@ case "${@: -1}" in
     fi
     log "Starting Artillery::Launcher with output to logs/"
     bin/presence 2>> logs/errors.log 1>> logs/console.log &
-    log "Artillery::Launcher running //"
+    log "Artillery::Launcher running. Now opening console //"
+    bin/stellar console
     ;;
   init )
     #de Clone face/ into current presence and build initial interface.
