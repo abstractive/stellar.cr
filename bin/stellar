@@ -54,8 +54,7 @@ case "${@: -1}" in
     fi
     log "Starting Artillery::Launcher with output to logs/"
     bin/presence 2>> logs/errors.log 1>> logs/console.log &
-    log "Artillery::Launcher running. Now opening console //"
-    bin/stellar console
+    log "Artillery::Launcher running //"
     ;;
   init )
     #de Clone face/ into current presence and build initial interface.
