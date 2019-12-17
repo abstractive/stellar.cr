@@ -12,6 +12,7 @@ function log { echo "$(timestamp) > $1"; }
 export ARTILLERY_CONFIGURATION='stellar.yml'
 
 case "${@: -1}" in
+
   console )
     tail -f logs/console.log
     ;;
