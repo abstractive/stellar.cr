@@ -1,3 +1,8 @@
+# v201912171946-8Pg5 0.4.3
+* Removed other icon sets besides fontawesome.
+* Upgraded to Quasar 1.5.9
+* Moved to semver compatible format, but not adopting religion.
+
 # v201912161344-7Ng4 0.0.4.2
 * Added bin/stellar `mountpoint` and `launcher` which check for built code, otherwise builds that, then starts.
 

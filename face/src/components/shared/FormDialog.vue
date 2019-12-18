@@ -8,7 +8,7 @@
           </div>
 
           <div class="col-auto">
-            <q-btn color="grey-7" round flat icon="more_vert">
+            <q-btn color="grey-7" round flat icon="fas fa-ellipsis-v">
               <q-menu cover auto-close>
                 <q-list>
                   <q-item clickable>

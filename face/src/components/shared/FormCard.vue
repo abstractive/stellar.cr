@@ -8,7 +8,7 @@
           <div class="col">
             <div class="text-h6 q-pb-none">{{title}}</div>
           </div>
-          <q-btn color="grey-7" round flat icon="more_vert">
+          <q-btn color="grey-7" round flat icon="fas fa-ellipsis-v">
             <q-menu fit anchor="bottom left" self="top left" auto-close>
               <div class="row no-wrap">
                 <q-btn size='md' dense flat align="right" class='q-pa-xs full-width'

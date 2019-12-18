@@ -54,7 +54,7 @@
             round
             unelevated
             color="accent"
-            icon="chevron_left"
+            icon="fas fa-chevron-left"
             @click.capture="miniDrawer"
           />
         </div>
