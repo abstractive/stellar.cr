@@ -58,8 +58,9 @@ export default {
       title: this.$t('forms.RequestConsultation.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.RequestConsultation.option'),
-          icon: 'fas fa-diagnoses text-grey-7',
+          icon: 'fas fa-diagnoses text-deep-orange-6',
           type: 'submit'
         }
       ]

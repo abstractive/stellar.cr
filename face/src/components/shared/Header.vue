@@ -8,9 +8,9 @@
         <q-icon name="fas fa-bars" />
       </q-btn>
       <q-toolbar-title>
-        <a class='cursor-pointer' @click="$router.push('/')">
+        <q-btn size=lg no-caps flat type='a' class='cursor-pointer' to='/'>
           Stellar
-        </a>
+        </q-btn>
       </q-toolbar-title>
     </q-toolbar>
   </q-header>

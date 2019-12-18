@@ -59,8 +59,9 @@ export default {
       title: this.$t('forms.RequestBid.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.RequestBid.option'),
-          icon: 'fas fa-quote-left text-grey-7',
+          icon: 'fas fa-quote-left text-deep-orange-6',
           type: 'submit'
         }
       ]

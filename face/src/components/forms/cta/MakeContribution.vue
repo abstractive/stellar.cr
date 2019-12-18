@@ -66,8 +66,9 @@ export default {
       title: this.$t('forms.MakeContribution.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.MakeContribution.option'),
-          icon: 'fas fa-hand-holding-usd text-grey-7',
+          icon: 'fas fa-hand-holding-usd text-deep-orange-6',
           type: 'submit'
         }
       ]

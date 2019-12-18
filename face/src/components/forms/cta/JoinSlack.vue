@@ -52,8 +52,9 @@ export default {
       title: this.$t('forms.JoinSlack.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.JoinSlack.option'),
-          icon: 'fab fa-slack text-grey-7',
+          icon: 'fab fa-slack text-deep-orange-6',
           type: 'submit'
         }
       ]

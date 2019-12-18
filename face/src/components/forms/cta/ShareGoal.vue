@@ -69,8 +69,9 @@ export default {
       title: this.$t('forms.ShareGoal.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.ShareGoal.option'),
-          icon: 'fas fa-bullseye text-grey-7',
+          icon: 'fas fa-bullseye text-deep-orange-6',
           type: 'submit'
         }
       ]

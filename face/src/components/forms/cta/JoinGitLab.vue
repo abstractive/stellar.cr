@@ -50,8 +50,9 @@ export default {
       title: this.$t('forms.JoinGitLab.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.JoinGitLab.option'),
-          icon: 'fab fa-gitlab text-grey-7',
+          icon: 'fab fa-gitlab text-deep-orange-6',
           type: 'submit'
         }
       ]

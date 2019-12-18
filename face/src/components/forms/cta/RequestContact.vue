@@ -53,8 +53,9 @@ export default {
       title: this.$t('forms.RequestContact.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.RequestContact.option'),
-          icon: 'fas fa-phone text-grey-7',
+          icon: 'fas fa-phone text-deep-orange-6',
           type: 'submit'
         }
       ]

@@ -1,7 +1,7 @@
 <template>
   <q-page class="q-pa-lg">
     <h4 class='q-mt-none q-mb-lg'>
-      <q-icon class='text-grey-7' name="fas fa-fist-raised q-mr-sm" />
+      <q-icon class='text-deep-orange-6' name="fas fa-fist-raised q-mr-sm" />
       {{ title }}
     </h4>
     <q-card class="q-mb-lg">

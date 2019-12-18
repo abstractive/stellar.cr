@@ -38,8 +38,9 @@ export default {
       title: this.$t('forms.SubscribeNewsletter.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.SubscribeNewsletter.option'),
-          icon: 'far fa-newspaper text-grey-7',
+          icon: 'far fa-newspaper text-deep-orange-6',
           type: 'submit'
         }
       ]

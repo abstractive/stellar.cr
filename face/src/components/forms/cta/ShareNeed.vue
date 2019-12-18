@@ -69,8 +69,9 @@ export default {
       title: this.$t('forms.ShareNeed.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.ShareNeed.option'),
-          icon: 'fas fa-seedling text-grey-7',
+          icon: 'fas fa-seedling text-deep-orange-6',
           type: 'submit'
         }
       ]

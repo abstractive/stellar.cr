@@ -1,10 +1,10 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <stellar-header />
-    <stellar-drawer-landing />
+    <stellar-drawer-landing class='fixed-left' />
     <stellar-footer />
     <stellar-signin />
-    <q-page-container>
+    <q-page-container id='layout'>
       <router-view />
     </q-page-container>
   </q-layout>

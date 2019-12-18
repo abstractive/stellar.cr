@@ -71,8 +71,9 @@ export default {
       title: this.$t('forms.MakePayment.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.MakePayment.option'),
-          icon: 'fas fa-file-invoice-dollar text-grey-7',
+          icon: 'fas fa-file-invoice-dollar text-deep-orange-6',
           type: 'submit'
         }
       ]

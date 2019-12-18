@@ -58,8 +58,9 @@ export default {
       title: this.$t('forms.ShareTestimonial.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.ShareTestimonial.option'),
-          icon: 'fas fa-paper-plane text-grey-7',
+          icon: 'fas fa-paper-plane text-deep-orange-6',
           type: 'submit'
         }
       ]

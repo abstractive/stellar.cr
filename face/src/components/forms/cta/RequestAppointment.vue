@@ -110,8 +110,9 @@ export default {
       title: this.$t('forms.RequestAppointment.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.RequestAppointment.option'),
-          icon: 'fas fa-calendar-day text-grey-7',
+          icon: 'fas fa-calendar-day text-deep-orange-6',
           type: 'submit'
         }
       ]

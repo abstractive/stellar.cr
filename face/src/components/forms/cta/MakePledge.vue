@@ -66,8 +66,9 @@ export default {
       title: this.$t('forms.MakePledge.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.MakePledge.option'),
-          icon: 'fas fa-money-check-alt text-grey-7',
+          icon: 'fas fa-money-check-alt text-deep-orange-6',
           type: 'submit'
         }
       ]

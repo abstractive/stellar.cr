@@ -58,8 +58,9 @@ export default {
       title: this.$t('forms.RequestAnswer.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.RequestAnswer.option'),
-          icon: 'fas fa-diagnoses text-grey-7',
+          icon: 'fas fa-diagnoses text-deep-orange-6',
           type: 'submit'
         }
       ]

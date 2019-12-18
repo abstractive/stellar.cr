@@ -38,8 +38,9 @@ export default {
       title: this.$t('forms.SubscribeAnnouncementList.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.SubscribeAnnouncementList.option'),
-          icon: 'fas fa-bullhorn text-grey-7',
+          icon: 'fas fa-bullhorn text-deep-orange-6',
           type: 'submit'
         }
       ]

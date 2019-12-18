@@ -63,8 +63,9 @@ export default {
       title: this.$t('forms.ShareSuggestion.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.ShareSuggestion.option'),
-          icon: 'far fa-lightbulb text-grey-7',
+          icon: 'far fa-lightbulb text-deep-orange-6',
           type: 'submit'
         }
       ]

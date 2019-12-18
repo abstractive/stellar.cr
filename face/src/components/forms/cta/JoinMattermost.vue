@@ -50,8 +50,9 @@ export default {
       title: this.$t('forms.JoinMattermost.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.JoinMattermost.option'),
-          icon: 'far fa-comments text-grey-7',
+          icon: 'far fa-comments text-deep-orange-6',
           type: 'submit'
         }
       ]

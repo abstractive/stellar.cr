@@ -50,8 +50,9 @@ export default {
       title: this.$t('forms.RequestAccess.title'),
       actions: [
         {
+          class: 'full-width',
           label: this.$t('forms.RequestAccess.option'),
-          icon: 'fas fa-unlock text-grey-7',
+          icon: 'fas fa-unlock text-deep-orange-6',
           type: 'submit'
         }
       ]
