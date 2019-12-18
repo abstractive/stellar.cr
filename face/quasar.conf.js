@@ -1,4 +1,5 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const appPath = require('@quasar/app/lib/app-paths')
 
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
@@ -90,7 +91,7 @@ module.exports = function (ctx) {
           .use(CopyWebpackPlugin, [
             [{
               // eslint-disable-next-line no-undef
-              from: appPaths.resolve.src('../../build/'),
+              from: appPath.resolve.src('../../build/'),
               to: './',
               ignore: ['.*']
             }]
@@ -127,15 +128,8 @@ module.exports = function (ctx) {
         description: 'Artillery+Quasar',
         display: 'standalone',
         orientation: 'portrait',
-        background_color: '#ffffff',
-        theme_color: '#CC342D',
-        icons: [
-          {
-            'src': 'statics/insignia.png',
-            'sizes': '512x512',
-            'type': 'image/png'
-          }
-        ]
+        background_color: '#e1e1e1',
+        theme_color: '#CC342D'
       }
     },
 

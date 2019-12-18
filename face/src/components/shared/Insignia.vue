@@ -17,7 +17,6 @@
 </template>
 
 <script>
-
 export default {
   methods: {
     revealSignIn () {
@@ -25,8 +24,4 @@ export default {
     }
   }
 }
-
 </script>
-
-<style>
-</style>

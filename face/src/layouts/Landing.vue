@@ -10,12 +10,11 @@
   </q-layout>
 </template>
 <script>
-import NavigationHeader from 'components/navigation/Header.vue'
+import NavigationHeader from 'components/shared/Header.vue'
 import DrawerLanding from 'components/drawers/Landing.vue'
-import NavigationFooter from 'components/navigation/Footer.vue'
+import NavigationFooter from 'components/shared/Footer.vue'
 import DialogSignIn from 'components/dialogs/SignIn.vue'
 export default {
-  name: 'Landing',
   components: {
     'stellar-header': NavigationHeader,
     'stellar-drawer-landing': DrawerLanding,

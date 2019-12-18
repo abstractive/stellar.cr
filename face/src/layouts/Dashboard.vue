@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHr LpR lFr">
+  <q-layout view="hHh lpR fFf">
     <stellar-header />
     <stellar-drawer-dashboard />
     <stellar-footer />
@@ -8,15 +8,13 @@
     </q-page-container>
   </q-layout>
 </template>
-
 <script>
 
-import NavigationHeader from 'components/navigation/Header.vue'
+import NavigationHeader from 'components/shared/Header.vue'
 import DrawerDashboard from 'components/drawer/Dashboard.vue'
-import NavigationFooter from 'components/navigation/Footer.vue'
+import NavigationFooter from 'components/shared/Footer.vue'
 
 export default {
-  name: 'Dashboard',
   components: {
     'stellar-header': NavigationHeader,
     'stellar-drawer-dashboard': DrawerDashboard,
@@ -24,6 +22,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>
