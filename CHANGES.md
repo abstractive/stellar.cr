@@ -1,3 +1,6 @@
+# v201912180255-8Pg5 0.4.4
+* Separated artillery.yml back out from stellar.yml and keep distinct again, going forward.
+
 # v201912171946-8Pg5 0.4.3
 * Removed other icon sets besides fontawesome.
 * Upgraded to Quasar 1.5.9

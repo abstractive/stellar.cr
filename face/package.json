@@ -1,6 +1,6 @@
 {
   "name": "stellar",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Artillery+Quasar",
   "productName": "Stellar",
   "cordovaId": "org.delimiter.abstractive.stellar",
