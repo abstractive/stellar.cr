@@ -2,7 +2,7 @@
   <div>
     <stellar-landing target="section-about"
       background='statics/landing.jpg'>
-      <h1 class='q-pa-none q-ma-none text-grey-10'>
+      <h1 class='q-pa-none q-ma-none text-grey-10 text-shadow'>
         <q-icon class='text-deep-orange-6 text-weight-normal' name='fas fa-star-of-life' /> Stellar
       </h1>
       <h4 class="q-mt-md text-grey-9 text-shadow">Digital Presence Reimagined</h4>
