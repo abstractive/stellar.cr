@@ -1,14 +1,3 @@
-port:
-  http: 1110
-  zeromq: 11100
-environments:
-  development:
-    launchers: 3
-  production:
-    launchers: 3
-    domains:
-      - stellar.freed.network
-public: build/
 presence:
   name: Stellar
   email: delimiterchambers@gmail.com
