@@ -1,6 +1,6 @@
-# v201912180928-8Pg5 0.4.9
+# v201912181055-8Pg5 0.4.9
 * Overhauled drawer with mini mode and collapse.
-* Added landing with "read more" scroll down demonstration.
+* Added landing component with "read more" scroll down demonstration, and `<slot>` behavior.
 * Populate drawer options dynamically.
 * Colorized accents.
 
