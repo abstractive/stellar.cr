@@ -8,7 +8,7 @@
         <q-icon name="fas fa-bars" />
       </q-btn>
       <q-toolbar-title>
-        <q-btn size=lg no-caps flat type='a' class='cursor-pointer' to='/'>
+        <q-btn size=lg no-caps flat type='a' class='cursor-pointer' to='/#'>
           Stellar
         </q-btn>
       </q-toolbar-title>

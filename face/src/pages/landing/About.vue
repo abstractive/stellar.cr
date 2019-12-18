@@ -1,6 +1,6 @@
 <template>
   <q-page class="q-pa-lg">
-    <h4 id='about' class='q-mt-none q-mb-lg'>
+    <h4 id='section-about' class='q-mt-none q-mb-lg'>
       <q-icon class='text-deep-orange-6' name="fas fa-star-of-life q-mr-sm" />
       {{ title }}
     </h4>

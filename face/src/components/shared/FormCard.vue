@@ -39,7 +39,7 @@
         <slot></slot>
       </q-card-section>
       <q-separator />
-      <q-card-actions>
+      <q-card-actions class='q-py-sm'>
         <q-btn flat
           v-for="button in actions"
           v-bind:class='button.class'

@@ -13,7 +13,6 @@ export default function () {
     mutations: {
       toggleDrawer (state) {
         if (!(state.showDrawer = !state.showDrawer)) {
-          console.log('toggle?')
           state.fullDrawer = false
         }
       },

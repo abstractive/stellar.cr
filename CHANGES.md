@@ -1,3 +1,9 @@
+# v201912180928-8Pg5 0.4.9
+* Overhauled drawer with mini mode and collapse.
+* Added landing with "read more" scroll down demonstration.
+* Populate drawer options dynamically.
+* Colorized accents.
+
 # v201912180255-8Pg5 0.4.4
 * Separated artillery.yml back out from stellar.yml and keep distinct again, going forward.
 * Clean up paths and components a bit.

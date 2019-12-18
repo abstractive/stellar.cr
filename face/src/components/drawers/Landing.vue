@@ -43,14 +43,21 @@
                 :name='(!fullDrawer) ? "fas fa-chevron-right" : "fas fa-chevron-left"' />
             </q-item-section>
             <q-item-section class='text-grey-6'>Collapse Sidebar</q-item-section>
+            <q-tooltip
+              v-if='showDrawerTooltip'
+              content-class="q-pa-sm q-px-lg  bg-deep-orange-6"
+              content-style="font-size: 16px"
+              anchor="center right"
+              self="center left"
+              :offset="[10, 10]">
+              Expand Sidebar
+            </q-tooltip>
           </q-item>
         </q-list>
     </q-drawer>
   </div>
 </template>
-
 <script>
-
 export default {
   data () {
     return {
@@ -88,7 +95,6 @@ export default {
   methods: {
     clickOption (o) {
       if ('click' in o) {
-        console.log(o.click)
         o.click()
       }
     },
