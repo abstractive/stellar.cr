@@ -4,7 +4,11 @@ const routes = [{
   children: [
     {
       path: '',
-      alias: '/about',
+      alias: '/',
+      component: () => import('pages/Landing.vue')
+    },
+    {
+      path: '/about',
       component: () => import('pages/landing/About.vue')
     },
     {
