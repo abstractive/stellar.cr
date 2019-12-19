@@ -1,3 +1,5 @@
 presence:
   name: Stellar
   email: delimiterchambers@gmail.com
+domains:
+  - stellar.freed.network

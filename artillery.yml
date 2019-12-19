@@ -1,6 +1,4 @@
 port:
   http: 1110
   zeromq: 11100
-domains:
-  - stellar.freed.network
 public: build/
