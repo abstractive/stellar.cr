@@ -1,2 +1,2 @@
-require "stellar/stars/cta/*"
-require "stellar/stars/participant"
+require "lib/stellar/src/stellar/stars/cta/*"
+require "lib/stellar/src/stellar/stars/participant"
