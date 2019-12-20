@@ -1,7 +1,3 @@
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const appPath = require('@quasar/app/lib/app-paths')
-
-// Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
 module.exports = function (ctx) {
@@ -11,57 +7,33 @@ module.exports = function (ctx) {
       'i18n',
       'axios',
       'lodash',
-      'stellar/base',
-      'stellar/forms',
-      'stellar/cta'
+      'stellar'
     ],
-
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
       'app.sass'
     ],
-
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
-      // 'ionicons-v4',
-      // 'mdi-v4',
-      // 'eva-icons',
-      // 'themify',
-      // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
-      //de 'roboto-font', // optional, you are not bound to it
-      //de 'material-icons', // optional, you are not bound to it,
+      'roboto-font',
       'fontawesome-v5'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
     framework: {
       iconSet: 'fontawesome-v5',
-
-      // Possible values for "all":
-      // * 'auto' - Auto-import needed Quasar components & directives
-      //            (slightly higher compile time; next to minimum bundle size; most convenient)
-      // * false  - Manually specify what to import
-      //            (fastest compile time; minimum bundle size; most tedious)
-      // * true   - Import everything from Quasar
-      //            (not treeshaking Quasar; biggest bundle size; convenient)
-      all: 'auto',
-
+      all: 'auto',  //de Auto-import; otherwise: true / false
       components: [],
       directives: [
-        'Ripple',
+        //de 'Ripple',
         'ClosePopup'
       ],
-
-      // Quasar plugins
       plugins: [
         'Notify',
         'Dialog'
       ]
     },
-
-    // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
     supportIE: false,
-
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       distDir: '../build/',
@@ -73,7 +45,6 @@ module.exports = function (ctx) {
       // preloadChunks: false,
       // extractCSS: false,
       gzip: true,
-
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack (cfg) {
         cfg.module.rules.push({
@@ -86,26 +57,13 @@ module.exports = function (ctx) {
           }
         })
       },
-      chainWebpack (chain) {
-        chain.plugin('copy-root-over-public')
-          .use(CopyWebpackPlugin, [
-            [{
-              // eslint-disable-next-line no-undef
-              from: appPath.resolve.src('../../build/'),
-              to: './',
-              ignore: ['.*']
-            }]
-          ])
-      }
     },
-
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
       // https: true,
       // port: 8080,
       open: false // opens browser window automatically
     },
-
     // animations: 'all', // --- includes all animations
     // https://quasar.dev/options/animations
     animations: [
@@ -114,12 +72,10 @@ module.exports = function (ctx) {
       'slideInLeft',
       'slideInRight'
     ],
-
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr
     ssr: {
       pwa: false
     },
-
     // https://quasar.dev/quasar-cli/developing-pwa/configuring-pwa
     pwa: {
       // workboxPluginMode: 'InjectManifest',
@@ -134,21 +90,17 @@ module.exports = function (ctx) {
         theme_color: '#CC342D'
       }
     },
-
     // https://quasar.dev/quasar-cli/developing-cordova-apps/configuring-cordova
     cordova: {
       id: 'org.delimiter.abstractive.stellar'
     },
-
     // https://quasar.dev/quasar-cli/developing-capacitor-apps/configuring-capacitor
     capacitor: {
       // hideSplashscreen: false
     },
-
     // https://quasar.dev/quasar-cli/developing-electron-apps/configuring-electron
     electron: {
       // bundler: 'builder', // or 'packager'
-
       packager: {
         // https://github.com/electron-userland/electron-packager/blob/master/docs/api.md#options
 

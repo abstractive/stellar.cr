@@ -16,7 +16,7 @@ module Stellar
 end
 
 require "./stellar/templates"
-require "./stellar/star/cta"
+require "./stellar/stars/cta"
 require "./stellar/star"
 
 require "./stellar/integrations/slack"
