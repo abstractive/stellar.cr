@@ -1,3 +1,7 @@
+# v201912200428-ARg7 0.5.1
+* Moved all CTA forms and associated code to Quasar extension to be reused: https://www.npmjs.com/package/quasar-app-extension-stellar-forms
+* Moved contents of `stars/` to `src/stellar/stars/` and added `stars/include.cr` to also begin to reuse those.
+
 # v201912181055-8Pg5 0.4.9
 * Overhauled drawer with mini mode and collapse.
 * Added landing component with "read more" scroll down demonstration, and `<slot>` behavior.
