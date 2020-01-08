@@ -1,3 +1,6 @@
+# 202001071703-3Qn8 0.5.3
+* Fix version conflict in shard ( my bad )
+
 # 202001071616-3Qn8 0.5.2
 * Support the Cannonry protocol of Artillery in src/processes/constellation
 * Rename src/processes/presence to src/processes/cluster for disambiguation
