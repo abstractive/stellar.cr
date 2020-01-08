@@ -1,5 +1,5 @@
 name: stellar
-version: 0.5.1
+version: 0.5.6
 crystal: 0.31.1
 
 github: abstractive/stellar.cr
@@ -15,8 +15,10 @@ authors:
 license: MIT
 
 targets:
-  presence:
-    main: src/processes/presence.cr
+  constellation:
+    main: src/processes/constellation.cr
+  cluster:
+    main: src/processes/cluster.cr
 
 dependencies:
   artillery:
