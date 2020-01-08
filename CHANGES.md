@@ -1,6 +1,8 @@
 # 202001071616-3Qn8 0.5.2
 * Support the Cannonry protocol of Artillery in src/processes/constellation
 * Rename src/processes/presence to src/processes/cluster for disambiguation
+* Remove Stellar presence moved into abstractive, and everything associated
+* This is now a focused Crystal shard which pairs with the Quasar extension
 
 # 201912200428-ARg7 0.5.1
 * Moved all CTA forms and associated code to Quasar extension to be reused: https://www.npmjs.com/package/quasar-app-extension-stellar-forms
