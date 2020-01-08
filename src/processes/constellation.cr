@@ -1,4 +1,4 @@
 require "../stellar"
 require "./../../stars/**"
 
-Artillery::Launcher.run
+Artillery::Cannon.run
