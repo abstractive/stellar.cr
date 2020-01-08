@@ -6,4 +6,6 @@
 
 ---
 
-Updated documentation forthcoming.
+This `Crystal` shard works hand in hand with the `Quasar` extension of the same name:
+
+* https://github.com/abstractive/stellar.js
