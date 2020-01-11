@@ -4,6 +4,7 @@ module Stellar
   TEMPLATES = "#{CALLSITE}/config/templates"
   module Templates
     def render_template(file, payload)
+      payload = {} of String => JSON::Any if payload.nil?
       model = {
         #de Values present in all templates.
         "PresenceName" => PRESENCE["name"].to_s,

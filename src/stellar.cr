@@ -4,12 +4,11 @@ Retriable.configure do |settings|
   settings.max_elapsed_time = 3.seconds
 end
 
-#de require "crest"
 
+#de TODO: Separate configurations? Probably not.
 ENV["ARTILLERY_CONFIGURATION"] = "stellar.yml"
 
 require "artillery"
-require "./boot/artillery"
 
 module Stellar
   include Artillery

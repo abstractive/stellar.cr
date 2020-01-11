@@ -3,7 +3,7 @@ module Stellar
     class JoinGitLab < Star
       vector :post, "/cta/join/gitlab"
       def post
-        if @payload
+        if !@payload.nil?
           slack_templated_message("cta_join_gitlab")
           sendgrid_host_notice("cta_join_gitlab", "A request to join our GitLab workspace arrived.")
           sendgrid_guest_notice("cta_join_gitlab", "Thank you for asking to join our GitLab workspace.")

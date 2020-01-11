@@ -33,12 +33,14 @@ module Stellar
         render_template(options[:template_local], options[:model]),
         "text/html"
       )
-      if options.has_key?(:template_remote)
-        if Artillery::SECRETS["sendgrid"]["templates"][options[:template_remote]]?
-          extra_fields = {} of String => ::Sendgrid::ExtraFieldsType
-          extra_fields["template_id"] = "#{Artillery::SECRETS["sendgrid"]["templates"][options[:template_remote]]}"
-          message.extra_fields.merge!(extra_fields)
-        end
+      if options.has_key?(:template_remote) &&
+        Artillery::SECRETS["sendgrid"].is_a?(YAML::Any) &&
+        Artillery::SECRETS["sendgrid"]["templates"]? &&
+        Artillery::SECRETS["sendgrid"]["templates"].is_a?(YAML::Any) &&
+        Artillery::SECRETS["sendgrid"]["templates"][options[:template_remote]]?
+        extra_fields = {} of String => ::Sendgrid::ExtraFieldsType
+        extra_fields["template_id"] = "#{Artillery::SECRETS["sendgrid"]["templates"][options[:template_remote]]}"
+        message.extra_fields.merge!(extra_fields)
       end
       @@client.send(message)
     end
