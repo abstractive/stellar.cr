@@ -2,6 +2,7 @@ require "slack"
 
 module Stellar
   module Slack
+
     extend self
     extend Templates
 
@@ -9,6 +10,11 @@ module Stellar
     @@default_channel = uninitialized String
     @@debug_url = uninitialized String
     @@debug_channel = uninitialized String
+
+    def Slack.templated_message(payload, template : String, channel = Slack::DEFAULT_CHANNEL)
+      ::Slack::Message.new(render_template("slack/#{template}", payload), channel: channel)
+        .send_to_hook(Slack::DEFAULT_URL)
+    end
   
     if Artillery::SECRETS["slack"]["default"]?
       if Artillery::SECRETS["slack"]["default"]["url"]?

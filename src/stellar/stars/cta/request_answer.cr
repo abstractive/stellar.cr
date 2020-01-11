@@ -1,12 +1,16 @@
+require "../../../stellar"
+require "../../mixins/call_to_action"
+
 module Stellar
   module CTA
     class RequestAnswer < Star
+      include CallToAction
       vector :post, "/cta/request/answer"
       def post
         if !@payload.nil?
-          slack_templated_message("cta_request_answer")
-          sendgrid_host_notice("cta_request_answer", "A new question arrived.")
-          sendgrid_guest_notice("cta_request_answer", "Thank you for your question.")
+          Slack.templated_message(@payload, "cta_request_answer")
+          SendGrid.host_notice(@payload, "cta_request_answer", "A new question arrived.")
+          SendGrid.guest_notice(@payload, "cta_request_answer", "Thank you for your question.")
           success({ "success" => true })
         else
           error_payload_missing

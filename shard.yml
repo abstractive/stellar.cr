@@ -1,13 +1,14 @@
 name: stellar
 version: 0.6.0
-crystal: 0.31.1
+crystal: 0.32.1
 
 github: abstractive/stellar.cr
 
 description: Microservice-based application ecosystem framework
 
 executables:
-  - stellar
+  - galaxy
+#de  - stellar
 
 authors:
   - digitalextremist <code@extremist.digital>
@@ -15,10 +16,8 @@ authors:
 license: MIT
 
 targets:
-  constellation:
-    main: src/processes/constellation.cr
-  cluster:
-    main: src/processes/cluster.cr
+  galaxy:
+    main: lib/artillery/src/activate/battery.cr
 
 dependencies:
   artillery:

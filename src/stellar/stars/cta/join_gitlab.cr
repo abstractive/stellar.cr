@@ -1,12 +1,16 @@
+require "../../../stellar"
+require "../../mixins/call_to_action"
+
 module Stellar
   module CTA
-    class JoinGitLab < Star
+    class JoinGitlab < Star
+      include CallToAction
       vector :post, "/cta/join/gitlab"
       def post
         if !@payload.nil?
-          slack_templated_message("cta_join_gitlab")
-          sendgrid_host_notice("cta_join_gitlab", "A request to join our GitLab workspace arrived.")
-          sendgrid_guest_notice("cta_join_gitlab", "Thank you for asking to join our GitLab workspace.")
+          Slack.templated_message(@payload, "cta_join_gitlab")
+          SendGrid.host_notice(@payload, "cta_join_gitlab", "A request to join our GitLab workspace arrived.")
+          SendGrid.guest_notice(@payload, "cta_join_gitlab", "Thank you for asking to join our GitLab workspace.")
           success({ "success" => true })
         else
           error_payload_missing

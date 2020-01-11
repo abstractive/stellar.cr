@@ -15,10 +15,6 @@ module Stellar
 end
 
 require "./stellar/templates"
-require "./stellar/stars/cta"
 require "./stellar/star"
-
-require "./stellar/integrations/slack"
-require "./stellar/integrations/sendgrid"
 
 alias Star = Stellar::Star

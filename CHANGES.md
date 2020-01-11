@@ -1,3 +1,7 @@
+# 202001111110-7Vn3 0.6.0
+* Many updates beyond these; this is only the most recent set over the past few hours:
+* Refactored the CTA's and setup appropriate interfaces so individual presences as individually invoke them with low overhead
+
 # 202001071703-3Qn8 0.5.3
 * Fix version conflict in shard ( my bad )
 

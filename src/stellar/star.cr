@@ -2,8 +2,6 @@ module Stellar
   abstract class Star < Artillery::Shot
 
     include Templates
-    include CTA
-
     property payload : Hash(String, JSON::Any)
 
     def initialize(shell)
