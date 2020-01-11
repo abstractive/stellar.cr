@@ -1,5 +1,5 @@
 name: stellar
-version: 0.6.0
+version: 0.6.1
 crystal: 0.32.1
 
 github: abstractive/stellar.cr
@@ -17,7 +17,7 @@ license: MIT
 
 targets:
   galaxy:
-    main: lib/artillery/src/activate/battery.cr
+    main: lib/artillery/src/artillery/activate/battery.cr
 
 dependencies:
   artillery:
